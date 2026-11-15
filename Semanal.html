@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Ansiedade · pergunta da semana · Mapa dos Sintomas (protótipo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<template id="tpl">
+<div class="scr">
+<div class="bar"><a class="iconbtn" href="Hoje.html" aria-label="Fechar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#294F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a><span class="ttl"><span class="tag" style="background: #E8EEE9; color: #3E6B5F">Ansiedade · manutenção</span></span><a class="crise" href="Crise.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B23A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"></path><path d="M12 9v4M12 16v.5"></path></svg>Plano de crise</a></div>
+<div class="body" style="gap: 14px; padding-top: 0">
+<h1 class="h1">Como foi a semana?</h1>
+<p class="small muted" style="margin: 0">12 a 18 de outubro. Humor e sono você já marcou nos dias: não perguntamos de novo.</p>
+<sc-for list="{{qs}}" as="q" hint-placeholder-count="3"><div class="card stack" style="gap: 10px"><b>{{q.label}}</b><div class="seg"><sc-for list="{{q.opts}}" as="o" hint-placeholder-count="3"><button class="{{o.cls}}" onClick="{{o.pick}}">{{o.label}}</button></sc-for></div></div></sc-for>
+<div class="card soft small">Se precisar, você pode anotar uma crise em qualquer dia, sem esperar o domingo.</div>
+</div>
+<div class="foot"><a class="btn" href="CuidadoAnsiedade.html">Salvar a semana</a></div>
+</div>
+</template>
+<div id="root"></div>
+<script src="runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { a: 'Nenhuma', b: '1 a 2 dias', c: 'Igual' }; }
+  renderVals() {
+    const Q = [['a', 'Crises de ansiedade', ['Nenhuma', '1 ou 2', '3 ou mais']], ['b', 'Deixei de fazer algo por ansiedade', ['Não', '1 a 2 dias', '3 ou mais']], ['c', 'Comparando com a semana passada', ['Melhor', 'Igual', 'Pior']]];
+    return { qs: Q.map((q) => ({ label: q[1], opts: q[2].map((o) => ({ label: o, cls: this.state[q[0]] === o ? 'on' : '', pick: () => this.setState({ [q[0]]: o }) })) })) };
+  }
+}
+</script>
+<script>__boot(Component);</script>
+</body>
+</html>

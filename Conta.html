@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Conta · Mapa dos Sintomas (protótipo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<template id="tpl">
+<div class="scr">
+<div class="top"><div class="stack" style="gap: 0"><span class="h1" style="font-size: 27px">Conta</span></div><a class="crise" href="Crise.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B23A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"></path><path d="M12 9v4M12 16v.5"></path></svg>Plano de crise</a></div>
+<div class="body" style="gap: 10px; padding-top: 8px">
+<div class="card row"><span class="ico" style="border-radius: 50%; width: 46px; height: 46px"><b>M</b></span><span style="flex: 1"><b style="display: block">Marina</b><span class="small muted">Google · 2 cuidados</span></span></div>
+<span class="kicker" style="color: #55675F; margin-top: 4px">Lembretes</span>
+<div class="card" style="padding: 4px 16px">
+<div class="li"><span class="tx"><b style="display: block">Registro do dia</b><span class="small muted" style="display: block">Todo dia, 21:00</span></span><span class="sw" role="img" aria-label="Ligado"></span></div>
+<div class="li"><span class="tx"><b style="display: block">Domingo</b><span class="small muted" style="display: block">Semana e pergunta a alguém, 19:00</span></span><span class="sw" role="img" aria-label="Ligado"></span></div>
+<div class="li"><span class="tx"><b style="display: block">Véspera da consulta</b><span class="small muted" style="display: block">20:00, com o resumo pronto</span></span><span class="sw" role="img" aria-label="Ligado"></span></div>
+<div class="li"><span class="tx"><b style="display: block">Quando eu sumir</b><span class="small muted" style="display: block">“Quando quiser voltar, um toque basta.”</span></span><span class="sw" role="img" aria-label="Ligado"></span></div>
+</div>
+<span class="kicker" style="color: #55675F; margin-top: 4px">Alertas e plano</span>
+<div class="card" style="padding: 4px 16px">
+<div class="li"><span class="tx"><b style="display: block">Aviso de sono curto</b><span class="small muted" style="display: block">3 noites com 5 h ou menos na semana, ou “muito” na pergunta de domingo</span></span><span class="sw" role="img" aria-label="Ligado"></span></div>
+<a class="li" href="Plano.html"><span class="tx"><b style="display: block">Meu plano de crise</b><span class="small muted" style="display: block">Sinais, o que fazer e contatos</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#789783" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></a>
+</div>
+<span class="kicker" style="color: #55675F; margin-top: 4px">Pessoas e privacidade</span>
+<div class="card" style="padding: 4px 16px">
+<a class="li" href="Proximo.html"><span class="tx"><b style="display: block">Alguém próximo</b><span class="small muted" style="display: block">Lúcia (mãe)</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#789783" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></a>
+<a class="li" href="Cuidados.html"><span class="tx"><b style="display: block">Meus cuidados</b><span class="small muted" style="display: block">Bipolar · Ansiedade · muda o que aparece</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#789783" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></a>
+<div class="li"><span class="tx"><b style="display: block">Bloqueio com digital ou PIN</b></span><span class="sw" role="img" aria-label="Ligado"></span></div>
+<div class="li"><span class="tx"><b style="display: block">Exportar meus dados</b><span class="small muted" style="display: block">Baixar uma cópia de tudo o que registrei</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#789783" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></div>
+<a class="li" href="ExcluirConta.html"><span class="tx"><b style="display: block"><span style="color: #B23A2E">Excluir minha conta</span></b><span class="small muted" style="display: block">Apaga do celular na hora e do servidor em até 30 dias</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#789783" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></a>
+</div>
+<a class="btn ghost" href="Main.html">Sair da conta</a>
+</div>
+<nav class="tabbar" aria-label="Navegação principal"><a class="tab" href="Hoje.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55675F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"></path></svg>Hoje</a><a class="tab" href="Cuidados.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55675F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg>Evolução</a><a class="tab" href="Consulta.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55675F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4h6v3H9zM9 12h6M9 16h4"></path></svg>Consulta</a><a class="tab on" href="Conta.html" aria-current="page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55675F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>Conta</a></nav>
+</div>
+</template>
+<div id="root"></div>
+<script src="runtime.js"></script>
+<script>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+<script>__boot(Component);</script>
+</body>
+</html>

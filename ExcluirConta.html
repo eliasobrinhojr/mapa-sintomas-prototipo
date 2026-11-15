@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Excluir minha conta · confirmação · Mapa dos Sintomas (protótipo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<template id="tpl">
+<div class="scr">
+<div class="bar"><a class="iconbtn" href="Conta.html" aria-label="Fechar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#294F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a><span class="ttl"></span><span style="width: 44px"></span></div>
+<div class="body" style="gap: 14px; padding-top: 0">
+<h1 class="h1">Excluir minha conta</h1>
+<p class="lead">Apaga todos os seus registros, do celular e da sua conta. <b>Não dá para desfazer.</b></p>
+<div class="card stack" style="gap: 10px"><b>Tem certeza?</b><span class="small muted">Se quiser guardar os registros, baixe uma cópia antes. Excluir não muda em nada o seu atendimento.</span>
+<span class="btn sec" style="min-height: 48px">Baixar uma cópia antes</span></div>
+<div style="flex: 1"></div>
+<a class="btn sec" href="Main.html" style="border-color: #B23A2E; color: #B23A2E !important">Sim, excluir e apagar</a>
+<a class="btn" href="Conta.html">Cancelar</a>
+</div>
+</div>
+</template>
+<div id="root"></div>
+<script src="runtime.js"></script>
+<script>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+<script>__boot(Component);</script>
+</body>
+</html>

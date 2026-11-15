@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Hoje · Mapa dos Sintomas (protótipo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<template id="tpl">
+<div class="scr">
+<div class="top"><div class="stack" style="gap: 0"><span class="small muted" style="font-weight: 600">Domingo, 18 de outubro</span><span class="h1" style="font-size: 27px">Oi, Marina</span></div><a class="crise" href="Crise.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B23A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"></path><path d="M12 9v4M12 16v.5"></path></svg>Plano de crise</a></div>
+<div class="body" style="gap: 10px; padding-top: 8px">
+<h2 class="h2">Como você está hoje?</h2>
+<a class="card" href="Registro.html" style="display: flex; align-items: center; gap: 14px; background: #087F75; border-color: #087F75">
+<span class="ico" style="width: 46px; height: 46px; border-radius: 14px; background: #239389"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+<span style="flex: 1"><span class="h3" style="display: block; font-size: 18px; color: #FFFFFF">Registrar meu dia</span><span class="small" style="color: #DDE8DF">Sono, humor e remédio · uns 20 segundos</span></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></a>
+<a class="card" href="DiaDificil.html" style="display: flex; align-items: center; gap: 14px; background: #DDE8DF; border-color: #C9DDD3">
+<span class="ico" style="width: 46px; height: 46px; border-radius: 14px; background: #FFFFFF"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#066A62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"></path></svg></span>
+<span style="flex: 1"><span class="h3" style="display: block; font-size: 18px; color: #066A62">Dia difícil</span><span class="small" style="color: #294F46">Só um toque no humor</span></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#066A62" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></a>
+<a class="card" href="Crise.html" style="display: flex; align-items: center; gap: 14px; border: 2px solid #B23A2E">
+<span class="ico" style="width: 46px; height: 46px; border-radius: 14px; background: #F8E5E1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B23A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"></path><path d="M12 9v4M12 16v.5"></path></svg></span>
+<span style="flex: 1"><span class="h3" style="display: block; font-size: 18px; color: #B23A2E">Estou em crise</span><span class="small" style="color: #55675F">Abrir meu plano agora</span></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B23A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></a>
+<a class="card stack" href="Semana.html" style="gap: 10px">
+<span class="between"><b>Esta semana</b><span class="small" style="color: #066A62; font-weight: 700">ver tudo</span></span>
+<div class="wk"><span class="mid" aria-hidden="true"></span><div class="col" role="img" aria-label="segunda: normal, 7 h"><span class="small muted" style="font-weight: 700">Seg</span><span class="trk"><i class="e4" style="top: 24px"></i></span></div><div class="col" role="img" aria-label="terça: animado, 6 h"><span class="small muted" style="font-weight: 700">Ter</span><span class="trk"><i class="e3" style="top: 12px"></i></span></div><div class="col" role="img" aria-label="quarta: acelerado, 5 h ou menos"><span class="small muted" style="font-weight: 700">Qua</span><span class="trk"><i class="e1" style="top: 0px"></i></span></div><div class="col" role="img" aria-label="quinta: acelerado, 5 h ou menos"><span class="small muted" style="font-weight: 700">Qui</span><span class="trk"><i class="e1" style="top: 0px"></i></span></div><div class="col" role="img" aria-label="sexta: animado, 6 h"><span class="small muted" style="font-weight: 700">Sex</span><span class="trk"><i class="e3" style="top: 12px"></i></span></div><div class="col" role="img" aria-label="sábado: acelerado, 5 h ou menos"><span class="small muted" style="font-weight: 700">Sáb</span><span class="trk"><i class="e1" style="top: 0px"></i></span></div><div class="col" role="img" aria-label="domingo: ainda sem registro"><span class="small muted" style="font-weight: 700">Dom</span><span class="trk"><i class="empty" style="top: 24px"></i></span></div></div><span class="small muted">Mais alto = mais acelerado. Linha tracejada = normal para você.</span>
+</a>
+<a class="card row" href="Semanal.html"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#066A62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span style="flex: 1"><b style="display: block">Ansiedade · pergunta da semana</b><span class="small muted">É domingo: 3 toques, 1 minuto</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#789783" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></a>
+<a class="card row" href="Consulta.html"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#066A62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg></span><span style="flex: 1"><b style="display: block">Consulta na quinta, 22/10</b><span class="small muted">Seu resumo das últimas semanas já está pronto</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#789783" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></a>
+</div>
+<nav class="tabbar" aria-label="Navegação principal"><a class="tab on" href="Hoje.html" aria-current="page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55675F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"></path></svg>Hoje</a><a class="tab" href="Cuidados.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55675F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg>Evolução</a><a class="tab" href="Consulta.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55675F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4h6v3H9zM9 12h6M9 16h4"></path></svg>Consulta</a><a class="tab" href="Conta.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55675F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>Conta</a></nav>
+</div>
+</template>
+<div id="root"></div>
+<script src="runtime.js"></script>
+<script>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+<script>__boot(Component);</script>
+</body>
+</html>
