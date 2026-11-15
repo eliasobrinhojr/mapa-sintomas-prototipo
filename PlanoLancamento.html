@@ -21,6 +21,12 @@
 <span class="kicker" style="margin-top: 4px">Liberado agora, depois será do Pro</span>
 <div class="card stack" style="gap: 8px"><span class="row small" style="gap: 8px; align-items: flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A6D62" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span style="flex: 1">Resumo de 4 semanas</span></span><span class="row small" style="gap: 8px; align-items: flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A6D62" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span style="flex: 1">Gráfico no resumo e no PDF</span></span></div>
 <div class="warm small"><b>Quando os planos pagos chegarem,</b> avisamos aqui 30 dias antes. Nada do que você registrou é apagado ou bloqueado.</div>
+<div class="card stack" style="gap: 10px"><b>O que mais ajudaria você?</b>
+<span class="small muted">Estamos decidindo o que construir. Algumas destas funções poderão ser pagas. Responder é opcional.</span>
+<sc-if value="{{aberta}}" hint-placeholder-val="{{true}}"><div class="chips"><sc-for list="{{ops}}" as="o" hint-placeholder-count="8"><button class="chip {{o.cls}}" onClick="{{o.pick}}" aria-pressed="{{o.on}}">{{o.label}}</button></sc-for></div>
+<button class="btn sec" onClick="{{enviar}}">Enviar resposta</button></sc-if>
+<sc-if value="{{enviada}}" hint-placeholder-val="{{false}}"><span class="row small" style="gap: 6px; color: #0A6D62; font-weight: 700"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A6D62" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Obrigado. Isso ajuda a decidir o que vem primeiro.</span></sc-if>
+</div>
 <a class="btn ghost" href="Planos.html">Ver como os planos vão ficar</a>
 </div>
 </div>
@@ -29,7 +35,14 @@
 <script src="runtime.js"></script>
 <script>
 class Component extends DCLogic {
-renderVals() { return {}; }
+  constructor(props) { super(props); this.state = { m: [], ok: false }; }
+  renderVals() {
+    const s = this.state, NADA = 'Nada disso';
+    const L = ['Lembrete na véspera da consulta', 'Anotar o que contar na consulta', 'Ver a evolução de meses', 'Comparar dois períodos', 'Ver o que aparece junto', 'Nome dos remédios e trocas', 'Mais de uma pessoa ajudando', NADA];
+    const pick = (l) => () => { let m = s.m.slice(); if (m.includes(l)) m = m.filter((x) => x !== l); else if (l === NADA) m = [NADA]; else m = m.filter((x) => x !== NADA).concat([l]); this.setState({ m: m }); };
+    return { ops: L.map((l) => ({ label: l, cls: s.m.includes(l) ? 'on' : '', on: s.m.includes(l) ? 'true' : 'false', pick: pick(l) })),
+      aberta: !s.ok, enviada: s.ok, enviar: () => this.setState({ ok: true }) };
+  }
 }
 </script>
 <script>__boot(Component);</script>
