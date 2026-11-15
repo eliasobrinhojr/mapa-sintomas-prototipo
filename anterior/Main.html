@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Boas-vindas e login · Mapa dos Sintomas (protótipo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="app.css?v=202611152011">
+<link rel="stylesheet" href="site.css?v=202611152011">
+</head>
+<body>
+<template id="tpl">
+<div class="scr">
+<span class="fresta" style="left: 24px; top: 150px; height: 92px" aria-hidden="true"></span>
+<div style="padding: 72px 24px 0 40px; display: flex; flex-direction: column; gap: 16px">
+<div class="row" style="gap: 10px"><span style="width: 40px; height: 40px; border-radius: 12px; background: #18203A; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"></path><path d="M9 3v15M15 6v15"></path></svg></span><span style="display: flex; flex-direction: column; line-height: 1.15"><span class="h3" style="font-size: 17px">Mapa dos Sintomas</span><span class="small muted" style="font-size: 12.5px; font-weight: 600">por Draxora</span></span></div>
+<h1 class="h1" style="font-size: 40px">Como você está <em>hoje</em>? Um toque basta.</h1>
+<p class="lead">Registre seu dia em 20 segundos e leve um resumo pronto para a consulta.</p>
+<div class="stack" style="gap: 10px; margin-top: 6px">
+<span class="row" style="gap: 10px"><span class="ico" style="width: 26px; height: 26px; border-radius: 13px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0A6D62" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><b>Um toque por dia, do seu jeito</b></span>
+<span class="row" style="gap: 10px"><span class="ico" style="width: 26px; height: 26px; border-radius: 13px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0A6D62" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><b>Resumo pronto para a consulta</b></span>
+<span class="row" style="gap: 10px"><span class="ico" style="width: 26px; height: 26px; border-radius: 13px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0A6D62" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><b>Alguém próximo pode ajudar a registrar</b></span>
+</div>
+</div>
+<div style="flex: 1"></div>
+<div style="padding: 0 24px 30px; display: flex; flex-direction: column; gap: 10px">
+<a class="btn" href="Aceite.html">Continuar com Google</a>
+<a class="btn dark" href="Aceite.html">Continuar com Apple</a>
+<a class="btn sec" href="Aceite.html">Entrar com e-mail</a>
+<a href="tel:188" class="row" style="gap: 10px; padding: 12px 14px; border-radius: 14px; border: 1.5px solid #A9243F; color: #A9243F; font-weight: 700; font-size: 14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A9243F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"></path><path d="M12 9v4M12 16v.5"></path></svg><span>Em crise agora? Sem precisar entrar: CVV 188 · SAMU 192</span></a>
+<p class="small muted" style="text-align: center; margin: 2px 0 0">Material de apoio. O app não faz diagnóstico e não substitui o profissional.</p>
+</div>
+</div>
+</template>
+<div id="root"></div>
+<script src="runtime.js?v=202611152011"></script>
+<script>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+<script>__boot(Component);</script>
+</body>
+</html>
