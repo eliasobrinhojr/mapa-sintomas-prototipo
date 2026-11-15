@@ -5,21 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
 <title>Lembrete diário (notificação) · Mapa dos Sintomas (protótipo)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="app.css">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 <template id="tpl">
 <div class="scr">
-<div class="bar"><a class="iconbtn" href="Conta.html" aria-label="Voltar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#18203A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></a><span class="ttl">Conta</span><a class="crise" href="Ajuda.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A9243F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="M5.6 5.6l3.6 3.6M14.8 14.8l3.6 3.6M18.4 5.6l-3.6 3.6M9.2 14.8l-3.6 3.6"></path></svg>Ajuda</a></div>
+<div class="bar"><a class="iconbtn" href="Conta.html" aria-label="Voltar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#202A35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></a><span class="ttl">Conta</span><a class="crise" href="Ajuda.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A9243F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="M5.6 5.6l3.6 3.6M14.8 14.8l3.6 3.6M18.4 5.6l-3.6 3.6M9.2 14.8l-3.6 3.6"></path></svg>Ajuda</a></div>
 <div class="body" style="gap: 14px; padding-top: 0">
 <h1 class="h1">Lembrete diário</h1>
 <div class="card row" style="padding: 14px 16px"><span style="flex: 1"><b style="display: block">Lembrar todo dia</b><span class="small muted">Notificação no celular</span></span><button class="sw {{swc}}" onClick="{{tsw}}" role="switch" aria-checked="{{swa}}" aria-label="Lembrar todo dia" style="border: 0; cursor: pointer"></button></div>
 <sc-if value="{{on}}" hint-placeholder-val="{{true}}"><div class="card stack" style="gap: 12px"><b>Horário</b>
 <div class="chips"><sc-for list="{{hrs}}" as="h" hint-placeholder-count="5"><button class="chip {{h.cls}}" onClick="{{h.pick}}" aria-pressed="{{h.on}}">{{h.label}}</button></sc-for></div>
 <span class="small muted">A notificação diz só: “Seus 20 segundos de hoje.” Nada sobre saúde aparece na tela bloqueada.</span></div>
-<span class="row small" style="gap: 6px; color: #0A6D62; font-weight: 700"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A6D62" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Pronto: lembrete todo dia às {{h}}.</span></sc-if>
+<span class="row small" style="gap: 6px; color: #2D7775; font-weight: 700"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D7775" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Pronto: lembrete todo dia às {{h}}.</span></sc-if>
 <sc-if value="{{off}}" hint-placeholder-val="{{false}}"><span class="small" style="font-weight: 700">Lembrete desligado. Você pode ligar de novo quando quiser.</span></sc-if>
 <span class="small muted">Na primeira vez, o celular pede permissão para enviar notificações.</span>
 </div>
