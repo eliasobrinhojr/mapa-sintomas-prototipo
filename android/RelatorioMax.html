@@ -6,8 +6,8 @@
 <meta name="robots" content="noindex">
 <title>Pro Max · relatório completo para o profissional · Mapa dos Sintomas (protótipo)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="app.css?v=202611152027">
-<link rel="stylesheet" href="site.css?v=202611152027">
+<link rel="stylesheet" href="app.css?v=202611152036">
+<link rel="stylesheet" href="site.css?v=202611152036">
 </head>
 <body>
 <template id="tpl">
@@ -18,13 +18,13 @@
 <p class="small muted" style="margin: 0">Para consultas com mais tempo entre uma e outra, ou para um profissional novo. Mostra só o que foi registrado, sem interpretação.</p>
 <div class="stack" style="gap: 6px"><b class="small">Período</b><div class="chips"><sc-for list="{{per}}" as="x" hint-placeholder-count="4"><button class="chip {{x.cls}}" onClick="{{x.pick}}" aria-pressed="{{x.on}}">{{x.label}}</button></sc-for></div></div>
 <div class="card stack" style="gap: 2px"><b>O que entra</b><div class="check" style="cursor: default"><span class="bx"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Gráfico de humor e sono</span></div><div class="check" style="cursor: default"><span class="bx"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Anotações marcadas para a consulta</span></div><div class="check" style="cursor: default"><span class="bx"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Remédios e trocas no período</span></div><div class="check" style="cursor: default"><span class="bx"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>O que a Lúcia e o Rafael registraram, lado a lado</span></div><div class="check" style="cursor: default"><span class="bx"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Números do período anterior, para comparar</span></div></div>
-<a class="btn" href="Folha.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.6"></circle><circle cx="6" cy="12" r="2.6"></circle><circle cx="18" cy="19" r="2.6"></circle><path d="M8.3 13.3l7.4 4.4M15.7 6.3l-7.4 4.4"></path></svg>Gerar relatório em PDF</a>
+<a class="btn" href="FolhaGrafico.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.6"></circle><circle cx="6" cy="12" r="2.6"></circle><circle cx="18" cy="19" r="2.6"></circle><path d="M8.3 13.3l7.4 4.4M15.7 6.3l-7.4 4.4"></path></svg>Gerar relatório em PDF</a>
 <span class="small muted" style="text-align: center">Feito no seu celular. Você escolhe com quem compartilhar.</span>
 </div>
 <div class="hi" aria-hidden="true"></div></div>
 </template>
 <div id="root"></div>
-<script src="runtime.js?v=202611152027"></script>
+<script src="runtime.js?v=202611152036"></script>
 <script>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { p: 'Desde a última consulta' }; }
