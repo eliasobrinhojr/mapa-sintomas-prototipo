@@ -237,3 +237,5 @@ textarea.area::placeholder{color:#8C93A6}
 .e6,.e7{background:#1F6FD6}
 .wk .trk i{border-color:rgba(24,32,58,.18)}
 .check .bx{background:#0A6D62;border-radius:6px}
+.tbl td.hot{background:#FBE8EC !important;color:#A9243F !important;font-weight:800}
+.sh .n{background:#18203A}
