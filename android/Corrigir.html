@@ -6,20 +6,25 @@
 <meta name="robots" content="noindex">
 <title>Dia já registrado · corrigir ou apagar · Mapa dos Sintomas (protótipo)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="app.css?v=202611152043">
-<link rel="stylesheet" href="site.css?v=202611152043">
+<link rel="stylesheet" href="app.css?v=202611152054">
+<link rel="stylesheet" href="site.css?v=202611152054">
 </head>
 <body>
 <template id="tpl">
-<div class="scr tall android" style="height: 2369px"><div class="sb" aria-hidden="true"><span>9:41</span><span class="isl"></span><span class="ic"><svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"></rect><rect x="5" y="5.5" width="3" height="6.5" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect></svg><svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1.5 4.2a9.5 9.5 0 0 1 13 0"></path><path d="M4 7a5.8 5.8 0 0 1 8 0"></path><circle cx="8" cy="10.2" r="1.2" fill="currentColor" stroke="none"></circle></svg><svg width="26" height="12" viewBox="0 0 26 12" fill="currentColor"><rect x="0.5" y="0.5" width="22" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45"></rect><rect x="2" y="2" width="19" height="8" rx="2"></rect><rect x="24" y="4" width="2" height="4" rx="1" opacity=".5"></rect></svg></span></div>
+<div class="scr tall android" style="height: 1004px"><div class="sb" aria-hidden="true"><span>9:41</span><span class="isl"></span><span class="ic"><svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"></rect><rect x="5" y="5.5" width="3" height="6.5" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect></svg><svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1.5 4.2a9.5 9.5 0 0 1 13 0"></path><path d="M4 7a5.8 5.8 0 0 1 8 0"></path><circle cx="8" cy="10.2" r="1.2" fill="currentColor" stroke="none"></circle></svg><svg width="26" height="12" viewBox="0 0 26 12" fill="currentColor"><rect x="0.5" y="0.5" width="22" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45"></rect><rect x="2" y="2" width="19" height="8" rx="2"></rect><rect x="24" y="4" width="2" height="4" rx="1" opacity=".5"></rect></svg></span></div>
 <div class="top"><div class="stack" style="gap: 0"><span class="small muted" style="font-weight: 600">Sábado, 17 de outubro</span><span class="h1" style="font-size: 29px">Ontem</span></div><a class="crise" href="Ajuda.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A9243F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="M5.6 5.6l3.6 3.6M14.8 14.8l3.6 3.6M18.4 5.6l-3.6 3.6M9.2 14.8l-3.6 3.6"></path></svg>Ajuda</a></div>
-<div class="body" style="gap: 12px; padding-top: 4px">
+<div class="body" style="gap: 14px; padding-top: 4px">
 <div class="wkstrip" role="group" aria-label="Últimos 7 dias"><a class="d reg" href="Corrigir.html" aria-label="segunda 12/10, registrado"><span>Seg</span><b>12</b><i></i></a><a class="d reg" href="Corrigir.html" aria-label="terça 13/10, registrado"><span>Ter</span><b>13</b><i></i></a><a class="d reg" href="Corrigir.html" aria-label="quarta 14/10, registrado"><span>Qua</span><b>14</b><i></i></a><a class="d reg" href="Corrigir.html" aria-label="quinta 15/10, registrado"><span>Qui</span><b>15</b><i></i></a><a class="d reg" href="Corrigir.html" aria-label="sexta 16/10, registrado"><span>Sex</span><b>16</b><i></i></a><a class="d sel reg" href="Corrigir.html" aria-label="sábado 17/10, registrado, aberto"><span>Sáb</span><b>17</b><i></i></a><a class="d" href="Hoje.html" aria-label="domingo 18/10, sem registro"><span>Dom</span><b>18</b><i></i></a></div>
-<div class="between" style="align-items: flex-start"><p class="small muted" style="margin: 0; flex: 1">Já registrado (salvo sáb 17/10 às 23:12). Mude o que quiser e salve de novo.</p><button class="help" onClick="{{toggleHelp}}" aria-expanded="{{helpStr}}" style="min-height: 44px; margin-top: -10px">Dicas</button></div>
+<sc-if value="{{prog}}" hint-placeholder-val="{{true}}"><div class="prog" role="group" aria-label="Passos do registro"><i class="{{p0}}"></i><i class="{{p1}}"></i><i class="{{p2}}"></i><i class="{{p3}}"></i><i class="{{p4}}"></i><span class="n">{{stn}} de 5</span><button class="help" onClick="{{toggleHelp}}" aria-expanded="{{helpStr}}" style="min-height: 44px; margin-left: 6px">Dicas</button></div></sc-if>
 <sc-if value="{{help}}" hint-placeholder-val="{{false}}"><div class="card soft small stack" style="gap: 6px"><span><b>Que dia é “hoje”.</b> O dia vai das 4h às 3h59. Registrou de madrugada, antes de dormir? Vale para o dia que está terminando.</span><span><b>Sono.</b> Vale o chute. Toque na hora em que apagou a luz e na hora em que levantou: o app faz a conta. Não lembra? Marque “Não lembro”.</span><span><b>Humor.</b> Pense na maior parte do dia. “Normal para mim” é como você costuma ser quando está bem.</span><span><b>Remédio.</b> “Como combinado” é do jeito que o profissional orientou.</span><span><b>Nota.</b> Fatos, não rótulos: o que aconteceu, quanto durou, o que veio antes.</span></div></sc-if>
 
+<sc-if value="{{s0}}" hint-placeholder-val="{{true}}"><h2 class="q">Como você <span class="lt">esteve hoje?</span></h2>
+<p class="small muted" style="margin: 0">Já registrado (salvo sáb 17/10 às 23:12). Mude o que quiser e salve de novo.</p>
+<div class="moods"><sc-for list="{{humor}}" as="m" hint-placeholder-count="5"><button class="mood {{m.cls}} {{m.color}}" onClick="{{m.pick}}" aria-pressed="{{m.on}}"><span class="face {{m.color}}" aria-hidden="true"></span><span>{{m.label}}</span><span class="r"></span></button></sc-for></div></sc-if>
+
+<sc-if value="{{s1}}" hint-placeholder-val="{{false}}"><h2 class="q">Como foi <span class="lt">o sono?</span></h2>
+<p class="small muted" style="margin: 0">A noite passada. Vale o chute.</p>
 <div class="card stack" style="gap: 10px">
-<span class="h3">Sono da noite passada <span class="small muted" style="font-weight: 500">vale o chute</span></span>
 
 <b class="small">Apagou a luz</b>
 <div class="hsc"><sc-for list="{{dei}}" as="x" hint-placeholder-count="6"><button class="chip {{x.cls}}" onClick="{{x.pick}}" aria-pressed="{{x.on}}">{{x.label}}</button></sc-for></div>
@@ -28,40 +33,48 @@
 <sc-if value="{{temconta}}" hint-placeholder-val="{{false}}"><span class="small" style="color: #2D7775; font-weight: 700">{{conta}} · marcado: {{faixa}}</span></sc-if>
 <b class="small" style="margin-top: 2px">Ou escolha direto</b>
 <div class="chips"><sc-for list="{{sono}}" as="x" hint-placeholder-count="6"><button class="chip {{x.cls}}" onClick="{{x.pick}}" aria-pressed="{{x.on}}">{{x.label}}</button></sc-for></div>
-</div>
+</div></sc-if>
 
+<sc-if value="{{s2}}" hint-placeholder-val="{{false}}"><h2 class="q">E o <span class="lt">remédio?</span></h2>
 <div class="card stack" style="gap: 8px">
-<span class="h3">Como você esteve <span class="small muted" style="font-weight: 500">a maior parte do dia</span></span>
-<sc-for list="{{humor}}" as="m" hint-placeholder-count="5"><button class="opt {{m.cls}}" onClick="{{m.pick}}" aria-pressed="{{m.on}}"><span class="c {{m.color}}"></span>{{m.label}}<span class="r"></span></button></sc-for>
-</div>
-
-<div class="card stack" style="gap: 8px">
-<span class="h3">Remédio</span>
 <sc-for list="{{remedio}}" as="m" hint-placeholder-count="3"><button class="opt {{m.cls}}" onClick="{{m.pick}}" aria-pressed="{{m.on}}">{{m.label}}<span class="r"></span></button></sc-for>
-</div>
+</div></sc-if>
 
+<sc-if value="{{s3}}" hint-placeholder-val="{{false}}"><h2 class="q">Aconteceu <span class="lt">algo hoje?</span></h2>
+<p class="small muted" style="margin: 0">Opcional. Marque quantos quiser, ou “Nada disso”.</p>
 <div class="card stack" style="gap: 10px">
-<span class="h3">Se aconteceu hoje <span class="small muted" style="font-weight: 500">opcional · marque quantos quiser, ou “Nada disso”</span></span>
 <div class="facts"><sc-for list="{{marcas}}" as="x" hint-placeholder-count="8"><button class="fact {{x.cls}}" onClick="{{x.pick}}" aria-pressed="{{x.on}}"><span class="bx"></span>{{x.label}}</button></sc-for></div>
 <sc-if value="{{pen}}" hint-placeholder-val="{{false}}"><div class="card alert stack" style="gap: 8px; padding: 12px 14px"><span class="small"><b style="font-size: 15px; color: #A9243F">Obrigado por registrar.</b> Se esses pensamentos estão fortes agora, você não precisa passar por isso sozinho: ligue <a href="tel:188" class="ul">188</a> (CVV, gratuito, 24 horas) ou, em emergência, <a href="tel:192" class="ul">192</a>. Conte também a quem acompanha você. O app não avisa ninguém.</span><a class="btn sec" href="Ajuda.html" style="min-height: 46px; border-color: #A9243F; color: #A9243F !important">Ver ajuda agora</a></div></sc-if>
-</div>
+</div></sc-if>
 
+<sc-if value="{{s4}}" hint-placeholder-val="{{false}}"><h2 class="q">Quer <span class="lt">anotar algo?</span></h2>
+<p class="small muted" style="margin: 0">Opcional, até 140 letras.</p>
 <div class="card stack" style="gap: 8px">
-<span class="h3">Nota <span class="small muted" style="font-weight: 500">opcional · até 140 letras</span></span>
-<textarea class="area" maxlength="140" rows="3" aria-label="Nota do dia" placeholder="Ex.: dormi 4 h e acordei cheia de planos">Esqueci o remédio; saí e voltei às 3h.</textarea>
-</div>
-<div class="stack" style="gap: 2px; border-top: 1px solid #DCE4E7; padding-top: 12px"><span class="small muted">Registrou no dia errado? Dá para desfazer logo depois.</span><a class="ul" href="Apagado.html" style="min-height: 44px; display: flex; align-items: center">Apagar o registro deste dia</a></div>
+<textarea class="area" maxlength="140" rows="4" aria-label="Nota do dia" placeholder="Ex.: dormi 4 h e acordei cheia de planos">Esqueci o remédio; saí e voltei às 3h.</textarea>
+</div></sc-if>
+
+<sc-if value="{{s5}}" hint-placeholder-val="{{false}}"><h2 class="q">O seu <span class="lt">dia</span></h2>
+<p class="small muted" style="margin: 0">Já registrado (salvo sáb 17/10 às 23:12). Mude o que quiser e salve de novo.</p>
+<div class="card" style="padding: 4px 16px"><sc-for list="{{rev}}" as="r" hint-placeholder-count="5"><button class="rev" onClick="{{r.go}}"><span class="tx"><span class="small muted">{{r.k}}</span><b>{{r.v}}</b></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#93A0AB" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></button></sc-for></div>
+<div class="stack" style="gap: 2px; border-top: 1px solid #DCE4E7; padding-top: 12px"><span class="small muted">Registrou no dia errado? Dá para desfazer logo depois.</span><a class="ul" href="Apagado.html" style="min-height: 44px; display: flex; align-items: center">Apagar o registro deste dia</a></div></sc-if>
 <p class="legal">Diário pessoal: não faz diagnóstico, não indica tratamento e não substitui avaliação profissional. Em sofrimento intenso, <a href="tel:188">188</a> (CVV). Emergência, <a href="tel:192">192</a>.</p>
 </div>
-<div class="foot" style="padding-bottom: 12px"><sc-if value="{{ok}}" hint-placeholder-val="{{true}}"><a class="btn" href="Salvo.html">Salvar alteração</a></sc-if><sc-if value="{{no}}" hint-placeholder-val="{{false}}"><button class="btn" onClick="{{warn}}">Salvar alteração</button></sc-if><sc-if value="{{err}}" hint-placeholder-val="{{false}}"><span class="err" style="text-align: center">Escolha pelo menos uma opção. Dia difícil? Só o humor já vale.</span></sc-if></div>
+<div class="foot" style="padding-bottom: 12px; gap: 4px">
+<sc-if value="{{err}}" hint-placeholder-val="{{false}}"><span class="err" style="text-align: center">Escolha pelo menos uma opção. Dia difícil? Só o humor já vale.</span></sc-if>
+<div class="row" style="gap: 8px"><sc-if value="{{podeVoltar}}" hint-placeholder-val="{{false}}"><button class="btn sec" onClick="{{prev}}" aria-label="Passo anterior" style="width: 56px; padding: 0; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#202A35" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></button></sc-if>
+<sc-if value="{{meio}}" hint-placeholder-val="{{true}}"><button class="btn" onClick="{{next}}">{{nextLabel}}</button></sc-if>
+<sc-if value="{{fimOk}}" hint-placeholder-val="{{false}}"><a class="btn" href="Salvo.html">Salvar alteração</a></sc-if>
+<sc-if value="{{fimNo}}" hint-placeholder-val="{{false}}"><button class="btn" onClick="{{warn}}">Salvar alteração</button></sc-if></div>
+<sc-if value="{{salvarJa}}" hint-placeholder-val="{{false}}"><a class="btn ghost" href="Salvo.html">Salvar agora e terminar</a></sc-if>
+</div>
 <nav class="tabbar" aria-label="Navegação principal" style="grid-template-columns: repeat(4, minmax(0, 1fr))"><a class="tab on" href="Hoje.html" aria-current="page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55626F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"></path></svg>Hoje</a><a class="tab" href="Semana.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55626F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>Semana</a><a class="tab" href="Resumo.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55626F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4h6v3H9zM9 12h6M9 16h4"></path></svg>Resumo</a><a class="tab" href="Conta.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55626F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>Conta</a></nav>
 <div class="hi" aria-hidden="true"></div></div>
 </template>
 <div id="root"></div>
-<script src="runtime.js?v=202611152043"></script>
+<script src="runtime.js?v=202611152054"></script>
 <script>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { dei: '1h', lev: '6h', sono: '5 h ou menos', humor: 'Acelerado ou fora do controle', rem: 'Não tomei como combinado', m: [2], e: false, hp: false }; }
+  constructor(props) { super(props); this.state = { st: 5, nt: 'Esqueci o remédio; saí e voltei às 3h.', dei: '1h', lev: '6h', sono: '5 h ou menos', humor: 'Acelerado ou fora do controle', rem: 'Não tomei como combinado', m: [2], e: false, hp: false }; }
   renderVals() {
     const s = this.state;
     const set = (o) => this.setState(Object.assign({ e: false }, o));
@@ -83,7 +96,16 @@ class Component extends DCLogic {
     const marcas = M.map((l, i) => { const on = s.m.includes(i); return { label: l, cls: (on ? 'on ' : '') + (i > 5 ? 'w' : ''), on: on ? 'true' : 'false', pick: () => set({ m: on ? s.m.filter((x) => x !== i) : (i === 8 ? [8] : s.m.filter((x) => x !== 8).concat([i])) }) }; });
     const ok = !!(s.sono || s.humor || s.rem || s.m.length);
     const tem = !!(s.dei && s.lev);
+    const st = s.st || 0;
+    const go = (n) => () => this.setState({ st: n, e: false });
+    const NOMES = ["Humor", "Sono", "Remédio", "Se aconteceu", "Nota"];
+    const rev = [[NOMES[0], s.humor, 0], [NOMES[1], s.sono ? (tem ? s.dei + ' às ' + s.lev + ' · ' : '') + s.sono : null, 1], [NOMES[2], s.rem, 2],
+      [NOMES[3], s.m.length ? s.m.map((i) => M[i]).join(', ') : null, 3], [NOMES[4], s.nt || null, 4]].map((r) => ({ k: r[0], v: r[1] || 'Sem resposta', go: go(r[2]) }));
     return {
+      s0: st === 0, s1: st === 1, s2: st === 2, s3: st === 3, s4: st === 4, s5: st === 5, prog: st < 5, stn: Math.min(st + 1, 5),
+      p0: st >= 0 ? 'on' : '', p1: st >= 1 ? 'on' : '', p2: st >= 2 ? 'on' : '', p3: st >= 3 ? 'on' : '', p4: st >= 4 ? 'on' : '',
+      podeVoltar: st > 0 && st < 5, prev: go(st - 1), meio: st < 4, next: go(st + 1), nextLabel: 'Continuar: ' + NOMES[Math.min(st + 1, 4)].toLowerCase(),
+      fimOk: st >= 4 && ok, fimNo: st >= 4 && !ok, salvarJa: st < 4 && ok, rev,
       help: s.hp, helpStr: s.hp ? 'true' : 'false', toggleHelp: () => this.setState({ hp: !s.hp }),
       dei: horas('dei', DEI), lev: horas('lev', LEV), sono,
       temconta: tem, conta: tem ? 'Cerca de ' + calc(s.dei, s.lev) + ' h de sono' : '', faixa: s.sono || '',
