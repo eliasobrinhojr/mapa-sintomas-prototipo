@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Lembrete diário (notificação) · Mapa dos Sintomas (protótipo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="app.css?v=202611152027">
+<link rel="stylesheet" href="site.css?v=202611152027">
+</head>
+<body>
+<template id="tpl">
+<div class="scr android"><div class="sb" aria-hidden="true"><span>9:41</span><span class="isl"></span><span class="ic"><svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"></rect><rect x="5" y="5.5" width="3" height="6.5" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect></svg><svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1.5 4.2a9.5 9.5 0 0 1 13 0"></path><path d="M4 7a5.8 5.8 0 0 1 8 0"></path><circle cx="8" cy="10.2" r="1.2" fill="currentColor" stroke="none"></circle></svg><svg width="26" height="12" viewBox="0 0 26 12" fill="currentColor"><rect x="0.5" y="0.5" width="22" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45"></rect><rect x="2" y="2" width="19" height="8" rx="2"></rect><rect x="24" y="4" width="2" height="4" rx="1" opacity=".5"></rect></svg></span></div>
+<div class="bar"><a class="iconbtn" href="Conta.html" aria-label="Voltar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#202A35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6"></path></svg></a><span class="ttl">Conta</span><a class="crise" href="Ajuda.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A9243F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="M5.6 5.6l3.6 3.6M14.8 14.8l3.6 3.6M18.4 5.6l-3.6 3.6M9.2 14.8l-3.6 3.6"></path></svg>Ajuda</a></div>
+<div class="body" style="gap: 14px; padding-top: 0">
+<h1 class="h1">Lembrete diário</h1>
+<div class="card row" style="padding: 14px 16px"><span style="flex: 1"><b style="display: block">Lembrar todo dia</b><span class="small muted">Notificação no celular</span></span><button class="sw {{swc}}" onClick="{{tsw}}" role="switch" aria-checked="{{swa}}" aria-label="Lembrar todo dia" style="border: 0; cursor: pointer"></button></div>
+<sc-if value="{{on}}" hint-placeholder-val="{{true}}"><div class="card stack" style="gap: 12px"><b>Horário</b>
+<div class="chips"><sc-for list="{{hrs}}" as="h" hint-placeholder-count="5"><button class="chip {{h.cls}}" onClick="{{h.pick}}" aria-pressed="{{h.on}}">{{h.label}}</button></sc-for></div>
+<span class="small muted">A notificação diz só: “Seus 20 segundos de hoje.” Nada sobre saúde aparece na tela bloqueada.</span></div>
+<span class="row small" style="gap: 6px; color: #2D7775; font-weight: 700"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D7775" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Pronto: lembrete todo dia às {{h}}.</span></sc-if>
+<sc-if value="{{off}}" hint-placeholder-val="{{false}}"><span class="small" style="font-weight: 700">Lembrete desligado. Você pode ligar de novo quando quiser.</span></sc-if>
+<span class="small muted">Na primeira vez, o celular pede permissão para enviar notificações.</span>
+</div>
+<div class="hi" aria-hidden="true"></div></div>
+</template>
+<div id="root"></div>
+<script src="runtime.js?v=202611152027"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { h: '21:00', on: true }; }
+  renderVals() {
+    const s = this.state;
+    return { hrs: ['20:00', '21:00', '22:00', '22:30', '23:00'].map((l) => ({ label: l, cls: l === s.h ? 'on' : '', on: l === s.h ? 'true' : 'false', pick: () => this.setState({ h: l }) })),
+      on: s.on, off: !s.on, h: s.h, swc: s.on ? '' : 'off', swa: s.on ? 'true' : 'false', tsw: () => this.setState({ on: !s.on }) };
+  }
+}
+</script>
+<script>__boot(Component);</script>
+</body>
+</html>

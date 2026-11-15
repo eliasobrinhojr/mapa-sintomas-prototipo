@@ -1,0 +1,21 @@
+/* Ajustes só da versão navegável: a tela ocupa o celular inteiro; o miolo rola, barra e rodapé ficam parados. */
+html,body{margin:0;height:100%;background:#DCE4E7;-webkit-text-size-adjust:100%}
+#root{display:flex;justify-content:center;height:100%}
+.scr,.scr.tall{width:100% !important;max-width:480px;height:100dvh !important;min-height:0 !important}
+.scr.tall .body{flex:1 1 auto;min-height:0;overflow-y:auto}
+.scr{overflow-y:auto !important}
+.scr>*:not(.body){flex-shrink:0}
+.scr>.body{min-height:0}
+.scr>div[style="flex: 1"]{min-height:14px}
+@media (max-height:800px){.scr{--mt:28px}}
+.body{-webkit-overflow-scrolling:touch}
+span.sw{cursor:pointer}
+a,button{-webkit-tap-highlight-color:rgba(32,42,53,.12)}
+/* telas largas (página A4 e design system): cabem na largura por escala */
+.widebar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;background:#F4F7F8;border-bottom:1px solid #DCE4E7;font-family:'Figtree',sans-serif;color:#202A35}
+.widebar a,.widebar button{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid #202A35;background:#FFFFFF;color:#202A35;font:700 14.5px 'Figtree',sans-serif;text-decoration:none;cursor:pointer}
+.widebar button.go{background:#2D7775;border-color:#2D7775;color:#FFFFFF}
+.wide{height:auto !important;display:block !important;background:#DCE4E7}
+.wide #stage{transform-origin:0 0}
+.wide .scr{width:1100px !important;max-width:none !important;height:auto !important}
+@media print{.widebar{display:none}html,body{background:#FFFFFF;height:auto}.wide #stage{transform:none !important;width:auto !important}.wide #stage>div{gap:0 !important;background:#FFFFFF !important}.a4{page-break-after:always;break-after:page}@page{size:A4;margin:0}}

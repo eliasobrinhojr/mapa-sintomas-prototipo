@@ -324,3 +324,141 @@ input.field{border:1px solid #CBD5D9;box-sizing:border-box}
 .los{display:inline-block;width:11px;height:11px;border-radius:3px;background:#7463A8;transform:rotate(45deg)}
 .sk{background:#E6EDEF;border-radius:12px}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #2D7775;outline-offset:2px}
+
+/* ===== Calm & Modern · componentes (2ª rodada) ===== */
+/* fundo: liso nas telas de tarefa, com um brilho bem leve no topo; brilho de duas cores só nas telas de entrada */
+.scr{background-color:#F4F7F8;background-image:radial-gradient(380px 220px at 0 0,rgba(228,241,239,.9) 0,rgba(228,241,239,0) 100%);background-repeat:no-repeat}
+.scr.aura{background-image:radial-gradient(420px 320px at 0 0,#D9EDE9 0,rgba(228,241,239,0) 100%),radial-gradient(380px 300px at 100% 40px,#E6DFF6 0,rgba(238,234,248,0) 100%)}
+.scr[style*="background: #202A35"]{background-image:none}
+/* barra de status e indicador da base (só no protótipo) */
+.sb{position:absolute;top:0;left:0;right:0;height:50px;display:flex;align-items:center;justify-content:space-between;padding:14px 30px 0;font-family:'Lexend',system-ui,sans-serif;font-weight:600;font-size:15px;color:#202A35;z-index:5;pointer-events:none}
+.sb .isl{position:absolute;left:50%;top:11px;width:112px;height:32px;margin-left:-56px;border-radius:20px;background:#0B0F14}
+.sb .ic{display:flex;align-items:center;gap:6px}
+.sb svg{display:block}
+.scr[style*="background: #202A35"] .sb{color:#FFFFFF}
+.hi{position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:#202A35;opacity:.85;z-index:6;pointer-events:none}
+.scr[style*="background: #202A35"] .hi{background:#FFFFFF}
+/* topo */
+.top{padding:60px 20px 10px;align-items:center}
+.bar{padding:54px 20px 8px;min-height:108px}
+.h1{font-size:28px}
+.h1[style*="font-size: 27px"],.h1[style*="font-size: 29px"]{font-size:28px !important}
+.h1 .lt,.h1 em{font-weight:300;color:#55626F;font-style:normal}
+.iconbtn{width:46px;height:46px;border-radius:50%;border:0;background:#FFFFFF;box-shadow:0 1px 2px rgba(32,42,53,.05),0 6px 20px rgba(32,42,53,.06)}
+.crise{background:#FFFFFF;border:0;box-shadow:0 1px 2px rgba(32,42,53,.05),0 6px 20px rgba(32,42,53,.06);height:46px;padding:0 16px}
+/* cartões: sem fio, sombra muito leve, canto 24 */
+.card{border:0;border-radius:24px;padding:18px;box-shadow:0 1px 2px rgba(32,42,53,.05),0 6px 20px rgba(32,42,53,.06)}
+.card.soft{box-shadow:none}
+.card.alert{border:1.5px solid #A9243F;box-shadow:none;border-radius:20px}
+.card .card{box-shadow:none;background:#F4F7F8}
+.warm{border-radius:22px}
+.safe{border-radius:18px}
+.howto{border-radius:18px}
+.sheet{border-radius:30px;box-shadow:0 20px 60px rgba(32,42,53,.30)}
+/* botões em pílula; só o principal tem cor */
+.btn{border-radius:999px;min-height:56px;box-shadow:0 8px 18px rgba(45,119,117,.24)}
+.btn.sec{border:0;background:#FFFFFF;box-shadow:0 1px 2px rgba(32,42,53,.05),0 6px 20px rgba(32,42,53,.06)}
+.card .btn.sec,.sheet .btn.sec{background:#F4F7F8;box-shadow:none}
+.btn.sec[style*="border-color"]{border:1.5px solid;background:#FFFFFF;box-shadow:none}
+.btn.ghost{box-shadow:none;min-height:48px}
+.btn.dark{box-shadow:0 8px 18px rgba(32,42,53,.22)}
+.foot{background:transparent;border-top:0;padding:8px 20px 10px}
+/* chips e segmentado: pílulas; marcado = teal cheio */
+.chip{border:1px solid #DCE4E7;background:#FFFFFF;box-shadow:none}
+.card .chip{border-color:transparent;background:#F4F7F8}
+.chip.on,.card .chip.on{background:#2D7775;border-color:#2D7775;color:#FFFFFF;box-shadow:none}
+.seg{border-radius:999px;padding:5px;background:#E6EDEF}
+.seg button,.seg a{border-radius:999px}
+.seg button.on,.seg a.on{background:#2D7775;color:#FFFFFF !important;box-shadow:0 4px 10px rgba(45,119,117,.25)}
+/* opções: faixas largas; o humor ganha a cor do nível no fundo */
+.opt{border:0;background:#F4F7F8;border-radius:18px;min-height:56px}
+.opt .c{width:26px;height:26px;border-radius:50%;border:0}
+.opt:has(.c.e1),.opt:has(.c.e2){background:#EEEAF8}
+.opt:has(.c.e3){background:#F5F2FB}
+.opt:has(.c.e5){background:#EFF4FA}
+.opt:has(.c.e6),.opt:has(.c.e7){background:#E3ECF7}
+.opt.on{border:0;background:#E4F1EF;box-shadow:inset 0 0 0 2px #2D7775}
+.opt.on:has(.c.e1),.opt.on:has(.c.e2){background:#E6DFF6;box-shadow:inset 0 0 0 2px #7463A8}
+.opt.on:has(.c.e3){background:#EEEAF8;box-shadow:inset 0 0 0 2px #7463A8}
+.opt.on:has(.c.e4){background:#EAF0F2;box-shadow:inset 0 0 0 2px #55626F}
+.opt.on:has(.c.e5){background:#E3ECF7;box-shadow:inset 0 0 0 2px #3D6DAB}
+.opt.on:has(.c.e6),.opt.on:has(.c.e7){background:#D9E5F4;box-shadow:inset 0 0 0 2px #3D6DAB}
+.opt .r{border-color:#93A0AB;background:#FFFFFF}
+.opt.on .r{border:7px solid #202A35}
+.fact{border:0;background:#F4F7F8;border-radius:18px;min-height:60px}
+.fact .bx{width:24px;height:24px;border-radius:50%;border:2px solid #93A0AB;background:#FFFFFF}
+.fact.on{border:0;background:#E4F1EF;box-shadow:inset 0 0 0 2px #2D7775}
+.field,.area,input.field{border:1px solid transparent;background:#F4F7F8;border-radius:16px}
+.body>label input.field,.body>.stack input.field{background:#FFFFFF;border-color:#DCE4E7}
+.check .bx{border-radius:8px}
+.check .bx.off{border-color:#93A0AB}
+/* chave: estilo iPhone por padrão */
+.sw{width:52px;height:32px}
+.sw::after{width:26px;height:26px;top:3px;right:3px;box-shadow:0 1px 3px rgba(32,42,53,.25)}
+.sw.off::after{left:3px;right:auto}
+/* listas com ícone */
+.li{min-height:60px;border-top-color:#EEF2F4}
+.li .ico{width:38px;height:38px;border-radius:50%}
+/* barra de abas flutuante (iPhone) */
+.tabbar{margin:0 14px 22px;padding:7px;border:0;border-radius:34px;background:#FFFFFF;box-shadow:0 1px 2px rgba(32,42,53,.06),0 10px 30px rgba(32,42,53,.10);gap:4px}
+.scr.tall .tabbar{margin-top:auto}
+.tab{min-height:54px;border-radius:26px;gap:2px}
+.tab svg{padding:0;background:none !important}
+.tab.on{background:#E4F1EF;color:#1F5C5B !important}
+.toast{border-radius:999px;left:16px;right:16px;bottom:106px;padding:10px 10px 10px 20px;box-shadow:0 10px 30px rgba(32,42,53,.28)}
+/* três números: blocos de cor suave, alinhados à esquerda */
+.num3 .card{border-radius:22px;box-shadow:none;text-align:left;padding:14px 12px 12px;gap:4px}
+.num3 .card:nth-child(1){background:#E4F1EF}
+.num3 .card:nth-child(2){background:#EEEAF8}
+.num3 .card:nth-child(3){background:#E3ECF7}
+.num3 b{font-size:26px}
+.num3 span{color:#55626F}
+.a4 .num3 .card{background:#FFFFFF;border:1px solid #DCE4E7}
+/* faixa dos últimos 7 dias (no lugar do botão "Ontem") */
+.wkstrip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin:0 -8px}
+.wkstrip .d{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-height:66px;border-radius:22px;background:#FFFFFF;box-shadow:0 1px 2px rgba(32,42,53,.05),0 6px 20px rgba(32,42,53,.06);font-size:11.5px;font-weight:600;color:#55626F}
+.wkstrip .d b{font-family:'Lexend',system-ui,sans-serif;font-weight:600;font-size:16px;color:#202A35}
+.wkstrip .d i{width:6px;height:6px;border-radius:50%;background:transparent}
+.wkstrip .d.reg i{background:#2D7775}
+.wkstrip .d.hoje{background:#2D7775;color:#FFFFFF;box-shadow:0 8px 18px rgba(45,119,117,.24)}
+.wkstrip .d.hoje b{color:#FFFFFF}
+.wkstrip .d.hoje.reg i{background:#FFFFFF}
+.wkstrip .d.sel{background:#202A35;color:#FFFFFF}
+.wkstrip .d.sel b{color:#FFFFFF}
+.wkstrip .d.sel i{background:#FFFFFF}
+/* grade da semana: dia de hoje em pílula teal */
+.gr .hd{border-radius:16px;min-width:34px}
+.gr .hd.today{background:#2D7775;color:#FFFFFF}
+.gr .hd.today small{color:#FFFFFF}
+.gr i{width:17px;height:17px}
+/* Aparência: prévia */
+.pv{border-radius:22px;padding:16px;background:#F4F7F8;display:flex;flex-direction:column;gap:10px;--ac:#2D7775;--acs:#E4F1EF;--tx:#202A35;--sf:#FFFFFF}
+.pv.lav{--ac:#7463A8;--acs:#EEEAF8}
+.pv.dark{background:#202A35;--tx:#FFFFFF;--sf:#2C3845;--acs:#2C3845}
+.pv .pc{background:var(--sf);border-radius:18px;padding:12px 14px;color:var(--tx);display:flex;flex-direction:column;gap:8px}
+.pv .pb{background:var(--ac);color:#FFFFFF;border-radius:999px;min-height:40px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.pv .pd{display:flex;gap:6px;align-items:center}
+.pv .pd i{width:14px;height:14px;border-radius:50%;border:1.5px solid #93A0AB;display:inline-block}
+.pv .pd i.f{background:var(--ac);border-color:var(--ac)}
+.pv.big .pc{font-size:17.5px}
+.swt{width:30px;height:30px;border-radius:50%;flex:none;display:inline-block}
+
+/* ----- Android (Material 3): o que muda em relação ao iPhone ----- */
+.android .sb{height:40px;padding:10px 22px 0;font-family:'Figtree',sans-serif;font-size:14px}
+.android .sb .isl{width:14px;height:14px;margin-left:-7px;top:13px;border-radius:50%}
+.android .top{padding-top:52px}
+.android .bar{padding-top:46px;min-height:98px}
+.android .bar .ttl{text-align:left;font-size:17px;color:#202A35;font-weight:600;padding-left:4px}
+.android .hi{width:108px;margin-left:-54px;height:4px;opacity:.45}
+.android .tabbar{margin:0;border-radius:0;box-shadow:none;border-top:1px solid #E6EDEF;padding:10px 8px 24px}
+.android.scr.tall .tabbar{margin-top:auto}
+.android .tab{border-radius:0;gap:4px}
+.android .tab.on{background:none}
+.android .tab svg{padding:4px 20px;box-sizing:content-box;border-radius:16px}
+.android .tab.on svg{background:#E4F1EF !important}
+.android .toast{bottom:98px;border-radius:16px}
+.android .sw{background:#2D7775}
+.android .sw::after{width:24px;height:24px;top:4px;right:4px;box-shadow:none}
+.android .sw.off{background:#E6EDEF;box-shadow:inset 0 0 0 2px #93A0AB}
+.android .sw.off::after{width:16px;height:16px;top:8px;left:8px;background:#93A0AB}
+.android .btn{border-radius:999px}
