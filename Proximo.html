@@ -24,7 +24,8 @@
 </div>
 <sc-if value="{{ativa}}" hint-placeholder-val="{{true}}"><button class="btn sec" onClick="{{rem}}" style="border-color: #A9243F; color: #A9243F !important">Remover o acesso da Lúcia</button></sc-if>
 <sc-if value="{{removida}}" hint-placeholder-val="{{false}}"><div class="toast" style="position: static"><span>Acesso da Lúcia removido.</span><button class="tb" onClick="{{desf}}" style="background: transparent; cursor: pointer; font-family: inherit">Desfazer</button></div></sc-if>
-<a class="btn ghost" href="Convidar.html">+ Convidar outra pessoa</a>
+<sc-if value="{{ativa}}" hint-placeholder-val="{{true}}"><span class="small muted" style="text-align: center">Uma pessoa próxima por vez. Para convidar outra, remova este acesso.</span></sc-if>
+<sc-if value="{{removida}}" hint-placeholder-val="{{false}}"><a class="btn ghost" href="Convidar.html">Convidar alguém</a></sc-if>
 </div>
 </div>
 </template>
