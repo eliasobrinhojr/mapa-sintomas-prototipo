@@ -362,7 +362,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .btn.sec[style*="border-color"]{border:1.5px solid;background:#FFFFFF;box-shadow:none}
 .btn.ghost{box-shadow:none;min-height:48px}
 .btn.dark{box-shadow:0 8px 18px rgba(32,42,53,.22)}
-.foot{background:transparent;border-top:0;padding:8px 20px 10px}
+.foot{background:transparent;border-top:0;padding:8px 20px 26px}
 /* chips e segmentado: pílulas; marcado = teal cheio */
 .chip{border:1px solid #DCE4E7;background:#FFFFFF;box-shadow:none}
 .card .chip{border-color:transparent;background:#F4F7F8}

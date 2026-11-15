@@ -6,8 +6,8 @@
 <meta name="robots" content="noindex">
 <title>Pessoa próxima · Lúcia ativa · Mapa dos Sintomas (protótipo)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="app.css?v=202611152036">
-<link rel="stylesheet" href="site.css?v=202611152036">
+<link rel="stylesheet" href="app.css?v=202611152043">
+<link rel="stylesheet" href="site.css?v=202611152043">
 </head>
 <body>
 <template id="tpl">
@@ -19,7 +19,7 @@
 <div class="card stack" style="gap: 8px"><div class="row"><span class="ico" style="border-radius: 50%"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2D7775" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2 21a7 7 0 0 1 14 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a7 7 0 0 1 4 6.5"></path></svg></span><span style="flex: 1"><b style="display: block">Lúcia (mãe)</b><span class="small muted">Ativa desde 01/10 · registrou 3 dias</span></span></div></div>
 <div class="card" style="padding: 4px 16px">
 <div class="li"><span class="tx"><b style="display: block">Registrar o meu dia</b><span class="small muted" style="display: block">Do jeito que ela vê. Não muda o que você registra.</span></span><span class="small muted" style="font-weight: 700">sempre</span></div>
-<div class="li"><span class="tx"><b style="display: block">Ver a minha semana</b><span class="small muted" style="display: block">Ela nunca vê o resumo nem a sua conta</span></span><button class="sw {{c1}}" onClick="{{t1}}" role="switch" aria-checked="{{a1}}" aria-label="Ver a minha semana" style="border: 0; cursor: pointer"></button></div>
+<div class="li"><span class="tx"><b style="display: block">Ver a minha semana</b><span class="small muted" style="display: block">Ela não vê o resumo nem a sua conta</span></span><button class="sw {{c1}}" onClick="{{t1}}" role="switch" aria-checked="{{a1}}" aria-label="Ver a minha semana" style="border: 0; cursor: pointer"></button></div>
 <div class="li"><span class="tx"><b style="display: block">O que ela registra entra no meu resumo</b><span class="small muted" style="display: block">Marcado com o nome dela, ao lado do seu</span></span><button class="sw {{c2}}" onClick="{{t2}}" role="switch" aria-checked="{{a2}}" aria-label="O que ela registra entra no meu resumo" style="border: 0; cursor: pointer"></button></div>
 </div>
 <sc-if value="{{ativa}}" hint-placeholder-val="{{true}}"><button class="btn sec" onClick="{{rem}}" style="border-color: #A9243F; color: #A9243F !important">Remover o acesso da Lúcia</button></sc-if>
@@ -30,7 +30,7 @@
 <div class="hi" aria-hidden="true"></div></div>
 </template>
 <div id="root"></div>
-<script src="runtime.js?v=202611152036"></script>
+<script src="runtime.js?v=202611152043"></script>
 <script>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { r: false, v: true, z: true }; }

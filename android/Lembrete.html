@@ -6,8 +6,8 @@
 <meta name="robots" content="noindex">
 <title>Lembrete diário (notificação) · Mapa dos Sintomas (protótipo)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="app.css?v=202611152036">
-<link rel="stylesheet" href="site.css?v=202611152036">
+<link rel="stylesheet" href="app.css?v=202611152043">
+<link rel="stylesheet" href="site.css?v=202611152043">
 </head>
 <body>
 <template id="tpl">
@@ -18,7 +18,7 @@
 <div class="card row" style="padding: 14px 16px"><span style="flex: 1"><b style="display: block">Lembrar todo dia</b><span class="small muted">Notificação no celular</span></span><button class="sw {{swc}}" onClick="{{tsw}}" role="switch" aria-checked="{{swa}}" aria-label="Lembrar todo dia" style="border: 0; cursor: pointer"></button></div>
 <sc-if value="{{on}}" hint-placeholder-val="{{true}}"><div class="card stack" style="gap: 12px"><b>Horário</b>
 <div class="chips"><sc-for list="{{hrs}}" as="h" hint-placeholder-count="5"><button class="chip {{h.cls}}" onClick="{{h.pick}}" aria-pressed="{{h.on}}">{{h.label}}</button></sc-for></div>
-<span class="small muted">A notificação diz só: “Seus 20 segundos de hoje.” Nada sobre saúde aparece na tela bloqueada.</span></div>
+<span class="small muted">A notificação diz só: “Seus 20 segundos de hoje.” O texto da notificação não fala de saúde.</span></div>
 <span class="row small" style="gap: 6px; color: #2D7775; font-weight: 700"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D7775" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Pronto: lembrete todo dia às {{h}}.</span></sc-if>
 <sc-if value="{{off}}" hint-placeholder-val="{{false}}"><span class="small" style="font-weight: 700">Lembrete desligado. Você pode ligar de novo quando quiser.</span></sc-if>
 <span class="small muted">Na primeira vez, o celular pede permissão para enviar notificações.</span>
@@ -26,7 +26,7 @@
 <div class="hi" aria-hidden="true"></div></div>
 </template>
 <div id="root"></div>
-<script src="runtime.js?v=202611152036"></script>
+<script src="runtime.js?v=202611152043"></script>
 <script>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { h: '21:00', on: true }; }

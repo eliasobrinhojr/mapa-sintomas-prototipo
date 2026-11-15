@@ -6,8 +6,8 @@
 <meta name="robots" content="noindex">
 <title>Pro Max · o que a Lúcia vê, item por item · Mapa dos Sintomas (protótipo)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="app.css?v=202611152036">
-<link rel="stylesheet" href="site.css?v=202611152036">
+<link rel="stylesheet" href="app.css?v=202611152043">
+<link rel="stylesheet" href="site.css?v=202611152043">
 </head>
 <body>
 <template id="tpl">
@@ -15,7 +15,7 @@
 <div class="bar"><a class="iconbtn" href="ProximoMax.html" aria-label="Voltar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#202A35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></a><span class="ttl">Pessoas próximas</span><a class="crise" href="Ajuda.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A9243F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="M5.6 5.6l3.6 3.6M14.8 14.8l3.6 3.6M18.4 5.6l-3.6 3.6M9.2 14.8l-3.6 3.6"></path></svg>Ajuda</a></div>
 <div class="body" style="gap: 12px; padding-top: 0">
 <div class="between"><h1 class="h1">O que a Lúcia vê</h1><span class="prem">PRO MAX</span></div>
-<p class="small muted" style="margin: 0">Você muda quando quiser. Ela nunca vê o resumo, a sua conta nem as outras pessoas.</p>
+<p class="small muted" style="margin: 0">Você muda quando quiser. Ela não vê o resumo, a sua conta nem as outras pessoas.</p>
 <div class="card" style="padding: 4px 16px">
 <div class="li"><span class="tx"><b style="display: block">Registrar o meu dia</b><span class="small muted" style="display: block">Do jeito que ela vê. Não muda o que você registra.</span></span><span class="small muted" style="font-weight: 700">sempre</span></div>
 <div class="li"><span class="tx"><b style="display: block">Ver a minha semana</b><span class="small muted" style="display: block">Escolha abaixo o que aparece para ela</span></span><button class="sw {{csem}}" onClick="{{tsem}}" role="switch" aria-checked="{{asem}}" aria-label="Ver a minha semana" style="border: 0; cursor: pointer"></button></div>
@@ -28,7 +28,7 @@
 <div class="hi" aria-hidden="true"></div></div>
 </template>
 <div id="root"></div>
-<script src="runtime.js?v=202611152036"></script>
+<script src="runtime.js?v=202611152043"></script>
 <script>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { sem: true, hum: true, son: true, rem: true, aco: false, not: false, rel: true }; }

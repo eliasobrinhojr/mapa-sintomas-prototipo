@@ -6,8 +6,8 @@
 <meta name="robots" content="noindex">
 <title>Dia já registrado · corrigir ou apagar · Mapa dos Sintomas (protótipo)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="app.css?v=202611152036">
-<link rel="stylesheet" href="site.css?v=202611152036">
+<link rel="stylesheet" href="app.css?v=202611152043">
+<link rel="stylesheet" href="site.css?v=202611152043">
 </head>
 <body>
 <template id="tpl">
@@ -51,14 +51,14 @@
 <textarea class="area" maxlength="140" rows="3" aria-label="Nota do dia" placeholder="Ex.: dormi 4 h e acordei cheia de planos">Esqueci o remédio; saí e voltei às 3h.</textarea>
 </div>
 <div class="stack" style="gap: 2px; border-top: 1px solid #DCE4E7; padding-top: 12px"><span class="small muted">Registrou no dia errado? Dá para desfazer logo depois.</span><a class="ul" href="Apagado.html" style="min-height: 44px; display: flex; align-items: center">Apagar o registro deste dia</a></div>
-<p class="legal">Material educativo: não faz diagnóstico e não substitui avaliação profissional. Em sofrimento intenso, <a href="tel:188">188</a> (CVV). Emergência, <a href="tel:192">192</a>.</p>
+<p class="legal">Diário pessoal: não faz diagnóstico, não indica tratamento e não substitui avaliação profissional. Em sofrimento intenso, <a href="tel:188">188</a> (CVV). Emergência, <a href="tel:192">192</a>.</p>
 </div>
 <div class="foot" style="padding-bottom: 12px"><sc-if value="{{ok}}" hint-placeholder-val="{{true}}"><a class="btn" href="Salvo.html">Salvar alteração</a></sc-if><sc-if value="{{no}}" hint-placeholder-val="{{false}}"><button class="btn" onClick="{{warn}}">Salvar alteração</button></sc-if><sc-if value="{{err}}" hint-placeholder-val="{{false}}"><span class="err" style="text-align: center">Escolha pelo menos uma opção. Dia difícil? Só o humor já vale.</span></sc-if></div>
 <nav class="tabbar" aria-label="Navegação principal" style="grid-template-columns: repeat(4, minmax(0, 1fr))"><a class="tab on" href="Hoje.html" aria-current="page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55626F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"></path></svg>Hoje</a><a class="tab" href="Semana.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55626F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>Semana</a><a class="tab" href="Resumo.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55626F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4h6v3H9zM9 12h6M9 16h4"></path></svg>Resumo</a><a class="tab" href="Conta.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55626F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>Conta</a></nav>
 <div class="hi" aria-hidden="true"></div></div>
 </template>
 <div id="root"></div>
-<script src="runtime.js?v=202611152036"></script>
+<script src="runtime.js?v=202611152043"></script>
 <script>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { dei: '1h', lev: '6h', sono: '5 h ou menos', humor: 'Acelerado ou fora do controle', rem: 'Não tomei como combinado', m: [2], e: false, hp: false }; }

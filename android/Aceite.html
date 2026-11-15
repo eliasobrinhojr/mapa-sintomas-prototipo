@@ -6,8 +6,8 @@
 <meta name="robots" content="noindex">
 <title>Antes de começar · aceites (LGPD) · Mapa dos Sintomas (protótipo)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="app.css?v=202611152036">
-<link rel="stylesheet" href="site.css?v=202611152036">
+<link rel="stylesheet" href="app.css?v=202611152043">
+<link rel="stylesheet" href="site.css?v=202611152043">
 </head>
 <body>
 <template id="tpl">
@@ -16,18 +16,18 @@
 <div class="body" style="gap: 14px; padding-top: 0">
 <h1 class="h1">Antes de começar</h1>
 <div class="card stack" style="gap: 12px">
-<span class="row" style="gap: 10px; align-items: flex-start"><span class="ico" style="width: 28px; height: 28px; border-radius: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D7775" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span><span class="small" style="flex: 1"><b style="font-size: 15px">Seus registros ficam na sua conta,</b> guardados com segurança. Só você e quem você convidar podem ver.</span></span>
+<span class="row" style="gap: 10px; align-items: flex-start"><span class="ico" style="width: 28px; height: 28px; border-radius: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D7775" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span><span class="small" style="flex: 1"><b style="font-size: 15px">Seus registros ficam na sua conta.</b> No app, aparecem para você e para quem você convidar. A Política de Privacidade explica como são guardados e protegidos.</span></span>
 <span class="row" style="gap: 10px; align-items: flex-start"><span class="ico" style="width: 28px; height: 28px; border-radius: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D7775" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="small" style="flex: 1"><b style="font-size: 15px">O app não faz diagnóstico.</b> Ele organiza o que você registra para levar ao profissional.</span></span>
-<span class="row" style="gap: 10px; align-items: flex-start"><span class="ico" style="width: 28px; height: 28px; border-radius: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D7775" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8z"></path><path d="M10 20a2 2 0 0 0 4 0"></path></svg></span><span class="small" style="flex: 1"><b style="font-size: 15px">Ninguém é avisado de nada</b> sem você escolher.</span></span>
+<span class="row" style="gap: 10px; align-items: flex-start"><span class="ico" style="width: 28px; height: 28px; border-radius: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D7775" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8z"></path><path d="M10 20a2 2 0 0 0 4 0"></path></svg></span><span class="small" style="flex: 1"><b style="font-size: 15px">O app não avisa ninguém</b> por conta própria. Você escolhe o que compartilhar.</span></span>
 </div>
 <button class="check" onClick="{{t1}}" aria-pressed="{{p1}}"><span class="bx {{c1}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Tenho 18 anos ou mais e aceito os <span class="ul">Termos de Uso</span>.</span></button>
-<button class="check" onClick="{{t2}}" aria-pressed="{{p2}}"><span class="bx {{c2}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Autorizo guardar meus dados de saúde para o app funcionar, como explica a <span class="ul">Política de Privacidade</span>. Posso exportar ou apagar tudo quando quiser.</span></button>
+<button class="check" onClick="{{t2}}" aria-pressed="{{p2}}"><span class="bx {{c2}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Autorizo o tratamento dos meus dados de saúde para o app funcionar, como explica a <span class="ul">Política de Privacidade</span>. Posso exportar, pedir a exclusão e retirar esta autorização quando quiser.</span></button>
 </div>
 <div class="foot"><sc-if value="{{ok}}" hint-placeholder-val="{{true}}"><a class="btn" href="Hoje.html">Começar</a></sc-if><sc-if value="{{no}}" hint-placeholder-val="{{false}}"><button class="btn" onClick="{{warn}}" style="opacity: .55">Começar</button></sc-if><sc-if value="{{hint}}" hint-placeholder-val="{{false}}"><span class="small muted" style="text-align: center">Marque as duas caixas para começar.</span></sc-if><sc-if value="{{err}}" hint-placeholder-val="{{false}}"><span class="err" style="text-align: center">Marque as duas caixas para começar. Sem elas, nada é gravado.</span></sc-if></div>
 <div class="hi" aria-hidden="true"></div></div>
 </template>
 <div id="root"></div>
-<script src="runtime.js?v=202611152036"></script>
+<script src="runtime.js?v=202611152043"></script>
 <script>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { a: false, b: false, e: false }; }
