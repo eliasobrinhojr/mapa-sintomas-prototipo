@@ -16,7 +16,7 @@
 <div class="body" style="gap: 12px; padding-top: 0">
 <h1 class="h1">Convidar alguém próximo</h1>
 <p class="small muted" style="margin: 0">A pessoa recebe um link, baixa o app e entra com a conta dela.</p>
-<label class="stack" style="gap: 6px"><b class="small">Nome</b><span class="field">Lúcia</span></label>
+<label class="stack" style="gap: 6px"><b class="small">Nome de quem vai ajudar</b><input class="field" type="text" value="Lúcia" autocomplete="off" style="font-family: inherit; width: 100%"></label>
 <div class="stack" style="gap: 6px"><b class="small">Quem é para você</b><div class="chips"><sc-for list="{{rel}}" as="r" hint-placeholder-count="5"><button class="chip {{r.cls}}" onClick="{{r.pick}}">{{r.label}}</button></sc-for></div></div>
 <div class="card stack" style="gap: 8px"><b>O que ela pode fazer</b>
 <span class="row small" style="gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A6D62" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Registrar o seu dia, do jeito que ela vê</span>
@@ -25,7 +25,7 @@
 <span class="row small muted" style="gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C93A6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>Não muda nem apaga o que você registrou</span></div>
 <div style="flex: 1"></div>
 <a class="btn" href="Proximo.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"></path><path d="M16 6l-4-4-4 4M12 2v13"></path></svg>Enviar convite pelo WhatsApp</a>
-<span class="small muted" style="text-align: center">O convite vale por 7 dias. Você pode remover o acesso quando quiser.</span>
+<span class="small muted" style="text-align: center">O convite vale por 7 dias e só uma vez. Depois você escolhe o que ela vê e pode remover o acesso quando quiser.</span>
 </div>
 </div>
 </template>

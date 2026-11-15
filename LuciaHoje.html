@@ -41,7 +41,7 @@
 </div>
 
 <div class="card stack" style="gap: 10px">
-<span class="h3">Você notou hoje <span class="small muted" style="font-weight: 500">opcional · marque quantos quiser</span></span>
+<span class="h3">Você notou hoje <span class="small muted" style="font-weight: 500">opcional · marque quantos quiser, ou “Nada disso”</span></span>
 <div class="facts"><sc-for list="{{marcas}}" as="x" hint-placeholder-count="8"><button class="fact {{x.cls}}" onClick="{{x.pick}}" aria-pressed="{{x.on}}"><span class="bx"></span>{{x.label}}</button></sc-for></div>
 <sc-if value="{{pen}}" hint-placeholder-val="{{false}}"><div class="card alert stack" style="gap: 8px; padding: 12px 14px"><span class="small"><b style="font-size: 15px; color: #A9243F">Se for agora, não espere.</b> Fique perto dela e ligue <a href="tel:192" class="ul">192</a> (emergência) ou <a href="tel:188" class="ul">188</a> (CVV, 24 horas). Avise também o profissional que acompanha a Marina. O app não avisa ninguém.</span><a class="btn sec" href="Ajuda.html" style="min-height: 46px; border-color: #A9243F; color: #A9243F !important">Ver ajuda agora</a></div></sc-if>
 </div>
@@ -79,8 +79,8 @@ class Component extends DCLogic {
     const humor = H.map((h) => { const on = s.humor === h[0]; return { label: h[0], color: h[1], cls: on ? 'on' : '', on: on ? 'true' : 'false', pick: () => set({ humor: on ? null : h[0] }) }; });
     const R = ["Tomou como combinado", "Não tomou como combinado", "Não sei"];
     const remedio = R.map((l) => { const on = s.rem === l; return { label: l, cls: on ? 'on' : '', on: on ? 'true' : 'false', pick: () => set({ rem: on ? null : l }) }; });
-    const M = ["Humor mudou muito no dia", "Irritação forte ou explosão", "Agiu por impulso", "Perdeu o foco ou esqueceu algo", "Ansiedade ou pânico", "Evitou pessoas ou saídas", "Álcool ou substâncias além do normal", "Falou em morte ou em se machucar"];
-    const marcas = M.map((l, i) => { const on = s.m.includes(i); return { label: l, cls: (on ? 'on ' : '') + (i > 5 ? 'w' : ''), on: on ? 'true' : 'false', pick: () => set({ m: on ? s.m.filter((x) => x !== i) : s.m.concat([i]) }) }; });
+    const M = ["Humor mudou muito no dia", "Irritação forte ou explosão", "Agiu por impulso", "Perdeu o foco ou esqueceu algo", "Ansiedade ou pânico", "Evitou pessoas ou saídas", "Álcool ou substâncias além do normal", "Falou em morte ou em se machucar", "Nada disso hoje"];
+    const marcas = M.map((l, i) => { const on = s.m.includes(i); return { label: l, cls: (on ? 'on ' : '') + (i > 5 ? 'w' : ''), on: on ? 'true' : 'false', pick: () => set({ m: on ? s.m.filter((x) => x !== i) : (i === 8 ? [8] : s.m.filter((x) => x !== 8).concat([i])) }) }; });
     const ok = !!(s.sono || s.humor || s.rem || s.m.length);
     const tem = !!(s.dei && s.lev);
     return {

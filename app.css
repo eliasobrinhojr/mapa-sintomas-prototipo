@@ -239,3 +239,15 @@ textarea.area::placeholder{color:#8C93A6}
 .check .bx{background:#0A6D62;border-radius:6px}
 .tbl td.hot{background:#FBE8EC !important;color:#A9243F !important;font-weight:800}
 .sh .n{background:#18203A}
+
+/* ===== Playbook (15/11): acessibilidade e estados ===== */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #0A6D62;outline-offset:2px;border-radius:8px}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+::placeholder{color:#656C80 !important}
+.empty,.area.empty,.field.empty{color:#656C80 !important}
+.cnt.z{color:#656C80 !important}
+.grwrap{overflow-x:auto}
+.gr a.hd{min-height:44px;justify-content:center}
+.sk{display:block;background:#E3E6EE;border-radius:10px}
+input.field{border:1px solid #D5D9E3;box-sizing:border-box}

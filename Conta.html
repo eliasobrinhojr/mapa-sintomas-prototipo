@@ -22,7 +22,7 @@
 <span class="kicker" style="margin-top: 4px">Segurança e privacidade</span>
 <div class="card" style="padding: 4px 16px">
 <div class="li"><span class="tx"><b style="display: block">Abrir com digital ou PIN</b><span class="small muted" style="display: block">Desligado</span></span><button class="sw off" role="switch" aria-checked="false" aria-label="Desligado" style="border: 0"></button></div>
-<div class="li"><span class="tx"><b style="display: block">Exportar meus dados</b><span class="small muted" style="display: block">Um arquivo com tudo o que você registrou</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C93A6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></div>
+<button class="li" onClick="{{exportar}}" style="width: 100%; background: none; border: 0; border-top: 1px solid #EEF0F5; text-align: left; font: inherit; color: inherit; cursor: pointer"><span class="tx"><b style="display: block">Exportar meus dados</b><span class="small muted" style="display: block">Um arquivo com tudo o que você registrou</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C93A6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></button><sc-if value="{{exp}}" hint-placeholder-val="{{false}}"><span class="small" style="display: block; padding: 0 0 10px; color: #0A6D62; font-weight: 700">Arquivo pronto. Escolha onde salvar ou com quem compartilhar.</span></sc-if>
 <div class="li"><span class="tx"><b style="display: block">Termos e Política de Privacidade</b></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C93A6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></div>
 <a class="li" href="ExcluirConta.html"><span class="tx"><b style="display: block; color: #A9243F">Excluir minha conta</b><span class="small muted" style="display: block">Apaga do celular na hora e do servidor em até 30 dias</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C93A6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></a>
 </div>
@@ -36,7 +36,8 @@
 <script src="runtime.js"></script>
 <script>
 class Component extends DCLogic {
-renderVals() { return {}; }
+  constructor(props) { super(props); this.state = { e: false }; }
+  renderVals() { return { exp: this.state.e, exportar: () => this.setState({ e: true }) }; }
 }
 </script>
 <script>__boot(Component);</script>

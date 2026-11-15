@@ -18,6 +18,7 @@ Protótipo da **v1 de lançamento** do app **Mapa dos Sintomas** (Draxora), para
 - **4 · Resumo para levar ao médico:** 13 Resumo · valores, 2 semanas, 14 Resumo · gráfico, 4 semanas, 15 Página para o profissional (A4)
 - **5 · Conta:** 16 Conta, 17 Lembrete diário, 18 Pessoa próxima, 19 Convidar pelo WhatsApp, 20 Excluir minha conta
 - **6 · O app da pessoa próxima (Lúcia):** 21 Convite recebido, 22 Registrar o dia da Marina, 23 Registro salvo, 24 A semana da Marina, 25 Conta da Lúcia
+- **7 · Estados: carregando, vazio, erro e sem internet:** 26 Carregando, 27 Salvo sem internet, 28 Resumo ainda vazio, 29 Erro ao entrar, 30 Convite vencido, 31 Acesso removido (app da Lúcia)
 - **Design system:** 00 Design system
 
 ## Arquivos
