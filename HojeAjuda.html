@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Hoje · ajuda na hora (pensamentos de morte) · Mapa dos Sintomas (protótipo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<template id="tpl">
+<div class="scr tall">
+<div class="top"><div class="stack" style="gap: 0"><span class="small muted" style="font-weight: 600">Domingo, 18 de outubro</span><span class="h1" style="font-size: 29px">Hoje</span></div><a class="crise" href="Ajuda.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A9243F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="M5.6 5.6l3.6 3.6M14.8 14.8l3.6 3.6M18.4 5.6l-3.6 3.6M9.2 14.8l-3.6 3.6"></path></svg>Ajuda</a></div>
+<div class="body" style="gap: 12px; padding-top: 4px">
+<div class="between"><a class="chip" href="Corrigir.html" style="gap: 6px; min-height: 44px; padding: 0 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#18203A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>Ontem</a><button class="help" onClick="{{toggleHelp}}" aria-expanded="{{helpStr}}">Dicas</button></div>
+<sc-if value="{{help}}" hint-placeholder-val="{{false}}"><div class="card soft small stack" style="gap: 6px"><span><b>Que dia é “hoje”.</b> O dia vai das 4h às 3h59. Registrou de madrugada, antes de dormir? Vale para o dia que está terminando.</span><span><b>Sono.</b> Vale o chute. Toque na hora em que apagou a luz e na hora em que levantou: o app faz a conta. Não lembra? Marque “Não lembro”.</span><span><b>Humor.</b> Pense na maior parte do dia. “Normal para mim” é como você costuma ser quando está bem.</span><span><b>Remédio.</b> “Como combinado” é do jeito que o profissional orientou.</span><span><b>Nota.</b> Fatos, não rótulos: o que aconteceu, quanto durou, o que veio antes.</span></div></sc-if>
+<p class="small muted" style="margin: 0">Uma escolha já salva o dia. <b>Dia difícil? Só o humor já vale.</b></p>
+
+<div class="card stack" style="gap: 10px">
+<span class="h3">Sono da noite passada <span class="small muted" style="font-weight: 500">vale o chute</span></span>
+<button class="btn sec" onClick="{{igual}}" style="min-height: 44px">Igual à última noite: 1h → 6h</button>
+<b class="small">Apagou a luz</b>
+<div class="hsc"><sc-for list="{{dei}}" as="x" hint-placeholder-count="6"><button class="chip {{x.cls}}" onClick="{{x.pick}}" aria-pressed="{{x.on}}">{{x.label}}</button></sc-for></div>
+<b class="small">Levantou</b>
+<div class="hsc"><sc-for list="{{lev}}" as="x" hint-placeholder-count="6"><button class="chip {{x.cls}}" onClick="{{x.pick}}" aria-pressed="{{x.on}}">{{x.label}}</button></sc-for></div>
+<sc-if value="{{temconta}}" hint-placeholder-val="{{false}}"><span class="small" style="color: #0A6D62; font-weight: 700">{{conta}} · marcado: {{faixa}}</span></sc-if>
+<b class="small" style="margin-top: 2px">Ou escolha direto</b>
+<div class="chips"><sc-for list="{{sono}}" as="x" hint-placeholder-count="6"><button class="chip {{x.cls}}" onClick="{{x.pick}}" aria-pressed="{{x.on}}">{{x.label}}</button></sc-for></div>
+</div>
+
+<div class="card stack" style="gap: 8px">
+<span class="h3">Como você esteve <span class="small muted" style="font-weight: 500">a maior parte do dia</span></span>
+<sc-for list="{{humor}}" as="m" hint-placeholder-count="5"><button class="opt {{m.cls}}" onClick="{{m.pick}}" aria-pressed="{{m.on}}"><span class="c {{m.color}}"></span>{{m.label}}<span class="r"></span></button></sc-for>
+</div>
+
+<div class="card stack" style="gap: 8px">
+<span class="h3">Remédio</span>
+<sc-for list="{{remedio}}" as="m" hint-placeholder-count="3"><button class="opt {{m.cls}}" onClick="{{m.pick}}" aria-pressed="{{m.on}}">{{m.label}}<span class="r"></span></button></sc-for>
+</div>
+
+<div class="card stack" style="gap: 10px">
+<span class="h3">Se aconteceu hoje <span class="small muted" style="font-weight: 500">opcional · marque quantos quiser</span></span>
+<div class="facts"><sc-for list="{{marcas}}" as="x" hint-placeholder-count="8"><button class="fact {{x.cls}}" onClick="{{x.pick}}" aria-pressed="{{x.on}}"><span class="bx"></span>{{x.label}}</button></sc-for></div>
+<sc-if value="{{pen}}" hint-placeholder-val="{{false}}"><div class="card alert stack" style="gap: 8px; padding: 12px 14px"><span class="small"><b style="font-size: 15px; color: #A9243F">Obrigado por registrar.</b> Se esses pensamentos estão fortes agora, você não precisa passar por isso sozinho: ligue <a href="tel:188" class="ul">188</a> (CVV, gratuito, 24 horas) ou, em emergência, <a href="tel:192" class="ul">192</a>. Conte também a quem acompanha você. O app não avisa ninguém.</span><a class="btn sec" href="Ajuda.html" style="min-height: 46px; border-color: #A9243F; color: #A9243F !important">Ver ajuda agora</a></div></sc-if>
+</div>
+
+<div class="card stack" style="gap: 8px">
+<span class="h3">Nota <span class="small muted" style="font-weight: 500">opcional · até 140 letras</span></span>
+<textarea class="area" maxlength="140" rows="3" aria-label="Nota do dia" placeholder="Ex.: dormi 4 h e acordei cheia de planos"></textarea>
+</div>
+
+<p class="legal">Material educativo: não faz diagnóstico e não substitui avaliação profissional. Em sofrimento intenso, <a href="tel:188">188</a> (CVV). Emergência, <a href="tel:192">192</a>.</p>
+</div>
+<div class="foot" style="padding-bottom: 12px"><sc-if value="{{ok}}" hint-placeholder-val="{{true}}"><a class="btn" href="Salvo.html">Salvar o dia</a></sc-if><sc-if value="{{no}}" hint-placeholder-val="{{false}}"><button class="btn" onClick="{{warn}}">Salvar o dia</button></sc-if><sc-if value="{{err}}" hint-placeholder-val="{{false}}"><span class="err" style="text-align: center">Escolha pelo menos uma opção. Dia difícil? Só o humor já vale.</span></sc-if></div>
+<nav class="tabbar" aria-label="Navegação principal" style="grid-template-columns: repeat(4, minmax(0, 1fr))"><a class="tab on" href="Hoje.html" aria-current="page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#596178" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"></path></svg>Hoje</a><a class="tab" href="Semana.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#596178" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>Semana</a><a class="tab" href="Resumo.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#596178" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4h6v3H9zM9 12h6M9 16h4"></path></svg>Resumo</a><a class="tab" href="Conta.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#596178" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>Conta</a></nav>
+</div>
+</template>
+<div id="root"></div>
+<script src="runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { dei: null, lev: null, sono: null, humor: 'Muito para baixo, tudo custa', rem: null, m: [7], e: false, hp: false }; }
+  renderVals() {
+    const s = this.state;
+    const set = (o) => this.setState(Object.assign({ e: false }, o));
+    const DEI = ['21h', '21h30', '22h', '22h30', '23h', '23h30', '0h', '0h30', '1h', '1h30', '2h'];
+    const LEV = ['5h', '5h30', '6h', '6h30', '7h', '7h30', '8h', '8h30', '9h', '10h'];
+    const num = (t) => { const p = t.split('h'); return parseInt(p[0], 10) + (p[1] === '30' ? 0.5 : 0); };
+    const FAIXAS = ["9 h ou mais", "8 h", "7 h", "6 h", "5 h ou menos", "Não lembro"];
+    const calc = (d, l) => { let a = num(d); if (a < 12) a += 24; return Math.floor(num(l) + 24 - a); };
+    const faixaDe = (h) => h >= 9 ? '9 h ou mais' : (h <= 5 ? '5 h ou menos' : h + ' h');
+    const pickHora = (key, v) => { const n = Object.assign({}, s, { [key]: s[key] === v ? null : v });
+      const o = { [key]: n[key] }; if (n.dei && n.lev) o.sono = faixaDe(calc(n.dei, n.lev)); set(o); };
+    const horas = (key, list) => list.map((l) => { const on = s[key] === l; return { label: l, cls: on ? 'on' : '', on: on ? 'true' : 'false', pick: () => pickHora(key, l) }; });
+    const sono = FAIXAS.map((l) => { const on = s.sono === l; return { label: l, cls: on ? 'on' : '', on: on ? 'true' : 'false', pick: () => set({ sono: on ? null : l, dei: null, lev: null }) }; });
+    const H = [["Acelerado ou fora do controle", "e1"], ["Animado", "e3"], ["Normal para mim", "e4"], ["Pra baixo", "e5"], ["Muito para baixo, tudo custa", "e7"]];
+    const humor = H.map((h) => { const on = s.humor === h[0]; return { label: h[0], color: h[1], cls: on ? 'on' : '', on: on ? 'true' : 'false', pick: () => set({ humor: on ? null : h[0] }) }; });
+    const R = ["Tomei como combinado", "Não tomei como combinado", "Não uso remédio"];
+    const remedio = R.map((l) => { const on = s.rem === l; return { label: l, cls: on ? 'on' : '', on: on ? 'true' : 'false', pick: () => set({ rem: on ? null : l }) }; });
+    const M = ["Humor mudou muito no dia", "Irritação forte ou explosão", "Agi por impulso", "Perdi o foco ou esqueci algo", "Ansiedade ou pânico", "Evitei pessoas ou saídas", "Álcool ou substâncias além do normal", "Pensamentos de morte ou de me machucar"];
+    const marcas = M.map((l, i) => { const on = s.m.includes(i); return { label: l, cls: (on ? 'on ' : '') + (i > 5 ? 'w' : ''), on: on ? 'true' : 'false', pick: () => set({ m: on ? s.m.filter((x) => x !== i) : s.m.concat([i]) }) }; });
+    const ok = !!(s.sono || s.humor || s.rem || s.m.length);
+    const tem = !!(s.dei && s.lev);
+    return {
+      help: s.hp, helpStr: s.hp ? 'true' : 'false', toggleHelp: () => this.setState({ hp: !s.hp }),
+      dei: horas('dei', DEI), lev: horas('lev', LEV), sono,
+      temconta: tem, conta: tem ? 'Cerca de ' + calc(s.dei, s.lev) + ' h de sono' : '', faixa: s.sono || '',
+      igual: () => set({ dei: '1h', lev: '6h', sono: '5 h ou menos' }),
+      humor, remedio, marcas, pen: s.m.includes(7),
+      ok, no: !ok, err: s.e && !ok, warn: () => this.setState({ e: true })
+    };
+  }
+}
+</script>
+<script>__boot(Component);</script>
+</body>
+</html>
