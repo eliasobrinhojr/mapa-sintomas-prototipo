@@ -12,7 +12,7 @@ Protótipo da **v1 de lançamento** do app **Mapa dos Sintomas** (Draxora), para
 - Não tem login de verdade, servidor nem notificação.
 
 ## Fluxos
-- **1 · Entrar (conta e aceites):** 01 Boas-vindas · Google, Apple ou e-mail, 02 Antes de começar · aceites (LGPD), 03 Desbloqueio (se a pessoa ligar)
+- **1 · Entrar (conta e aceites):** 01 Boas-vindas · Google, Apple ou e-mail, 02 Antes de começar · aceites (LGPD), 02b Primeira vez · deixar o app com a sua cara (só uma vez), 03 Desbloqueio (se a pessoa ligar)
 - **2 · Hoje: o registro do dia:** 04 Hoje · passo 1: humor, 04b Hoje · passo 2: sono, 04c Hoje · passo 5: nota e salvar, 05 Passo 4 com a ajuda na hora, 06 Dia salvo · vai para a Semana, 07 Corrigir ou apagar: o dia em revisão, 08 Registro apagado · Desfazer, 09 Ajuda agora · 188 e 192
 - **3 · Semana:** 10 Semana, 11 Semana anterior · avisos, 12 Primeira semana (vazio)
 - **4 · Resumo para levar ao médico:** 13 Resumo · valores, 2 semanas, 14 Resumo · gráfico, 4 semanas, 15 Página para o profissional · valores (A4) · Grátis, 15b Página para o profissional · gráficos (A4) · Pro, liberada no lançamento

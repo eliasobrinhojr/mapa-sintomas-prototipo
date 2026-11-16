@@ -9,5 +9,8 @@
     h.classList.toggle('rel-sem', c.rel === false);
     (raiz || document).querySelectorAll('g.fc[data-k]').forEach(function (g) { var k = g.getAttribute('data-k'), i = String(c[k] || 0); if (g.getAttribute('data-i') !== i) { g.innerHTML = T[k][+i]; g.setAttribute('data-i', i); } }); }
   window.__icones = { ler: ler, gravar: gravar, aplicar: aplicar };
+  var ap = null;
+  window.__apar = { ler: function () { if (ap) return ap; var o = {}; try { o = JSON.parse(localStorage.getItem('ms.apar') || '{}') || {}; } catch (e) {} ap = Object.assign({ t: 'Automático', c: 'Teal' }, o); return ap; },
+    gravar: function (o) { ap = Object.assign({}, window.__apar.ler(), o); try { localStorage.setItem('ms.apar', JSON.stringify(ap)); } catch (e) {} } };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { aplicar(document); }); else aplicar(document);
 })();

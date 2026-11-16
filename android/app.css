@@ -543,3 +543,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .pvi span.c{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;font-weight:600;color:#55626F;text-align:center;line-height:1.2;width:56px}
 .pvi .face{width:44px;height:44px}
 html.rel-sem .ric{display:none !important}
+/* primeira vez: deixar o app com a sua cara */
+.cj{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.cj .ic{min-height:72px}
+.cj .ic .face{width:38px;height:38px}
+.pv .fx{justify-content:space-between}
+.swc{display:inline-block;width:16px;height:16px;border-radius:50%;margin-right:8px;flex:none}

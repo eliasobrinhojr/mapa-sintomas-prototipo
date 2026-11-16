@@ -6,8 +6,8 @@
 <meta name="robots" content="noindex">
 <title>Antes de começar · aceites (LGPD) · Mapa dos Sintomas (protótipo)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="app.css?v=202611152107">
-<link rel="stylesheet" href="site.css?v=202611152107">
+<link rel="stylesheet" href="app.css?v=202611152117">
+<link rel="stylesheet" href="site.css?v=202611152117">
 </head>
 <body>
 <template id="tpl">
@@ -23,12 +23,12 @@
 <button class="check" onClick="{{t1}}" aria-pressed="{{p1}}"><span class="bx {{c1}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Tenho 18 anos ou mais e aceito os <span class="ul">Termos de Uso</span>.</span></button>
 <button class="check" onClick="{{t2}}" aria-pressed="{{p2}}"><span class="bx {{c2}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Autorizo o tratamento dos meus dados de saúde para o app funcionar, como explica a <span class="ul">Política de Privacidade</span>. Posso exportar, pedir a exclusão e retirar esta autorização quando quiser.</span></button>
 </div>
-<div class="foot"><sc-if value="{{ok}}" hint-placeholder-val="{{true}}"><a class="btn" href="Hoje.html">Começar</a></sc-if><sc-if value="{{no}}" hint-placeholder-val="{{false}}"><button class="btn" onClick="{{warn}}" style="opacity: .55">Começar</button></sc-if><sc-if value="{{hint}}" hint-placeholder-val="{{false}}"><span class="small muted" style="text-align: center">Marque as duas caixas para começar.</span></sc-if><sc-if value="{{err}}" hint-placeholder-val="{{false}}"><span class="err" style="text-align: center">Marque as duas caixas para começar. Sem elas, nada é gravado.</span></sc-if></div>
+<div class="foot"><sc-if value="{{ok}}" hint-placeholder-val="{{true}}"><a class="btn" href="Personalizar.html">Começar</a></sc-if><sc-if value="{{no}}" hint-placeholder-val="{{false}}"><button class="btn" onClick="{{warn}}" style="opacity: .55">Começar</button></sc-if><sc-if value="{{hint}}" hint-placeholder-val="{{false}}"><span class="small muted" style="text-align: center">Marque as duas caixas para começar.</span></sc-if><sc-if value="{{err}}" hint-placeholder-val="{{false}}"><span class="err" style="text-align: center">Marque as duas caixas para começar. Sem elas, nada é gravado.</span></sc-if></div>
 <div class="hi" aria-hidden="true"></div></div>
 </template>
 <div id="root"></div>
-<script src="icones.js?v=202611152107"></script>
-<script src="runtime.js?v=202611152107"></script>
+<script src="icones.js?v=202611152117"></script>
+<script src="runtime.js?v=202611152117"></script>
 <script>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { a: false, b: false, e: false }; }
