@@ -30,6 +30,7 @@ class DCLogic { constructor(p) { this.props = p || {}; this.state = {}; } setSta
       const vals = comp.renderVals();
       for (const c of tpl.content.childNodes) expand(c, vals, frag);
       root.replaceChildren(frag);
+      if (window.__icones) window.__icones.aplicar(root);
       [...root.querySelectorAll(KEEP)].forEach((e, i) => { if (sc[i]) { e.scrollTop = sc[i][0]; e.scrollLeft = sc[i][1]; } });
       [...root.querySelectorAll('textarea,input')].forEach((e, i) => { if (tv[i] != null && tv.length) e.value = tv[i]; });
     };
