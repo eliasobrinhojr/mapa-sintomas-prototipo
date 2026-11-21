@@ -16,7 +16,7 @@
 <div class="body" style="gap: 14px; padding-top: 4px">
 <div class="wkstrip" role="group" aria-label="Últimos 7 dias"><a class="d reg" href="Corrigir.html" aria-label="segunda 12/10, registrado"><span>Seg</span><b>12</b><i></i></a><a class="d reg" href="Corrigir.html" aria-label="terça 13/10, registrado"><span>Ter</span><b>13</b><i></i></a><a class="d reg" href="Corrigir.html" aria-label="quarta 14/10, registrado"><span>Qua</span><b>14</b><i></i></a><a class="d reg" href="Corrigir.html" aria-label="quinta 15/10, registrado"><span>Qui</span><b>15</b><i></i></a><a class="d reg" href="Corrigir.html" aria-label="sexta 16/10, registrado"><span>Sex</span><b>16</b><i></i></a><a class="d sel reg" href="Corrigir.html" aria-label="sábado 17/10, registrado, aberto"><span>Sáb</span><b>17</b><i></i></a><a class="d" href="Hoje.html" aria-label="domingo 18/10, sem registro"><span>Dom</span><b>18</b><i></i></a></div>
 <sc-if value="{{prog}}" hint-placeholder-val="{{true}}"><div class="stack" role="group" aria-label="Passos do registro" style="gap: 2px"><div class="row" style="gap: 8px; min-height: 44px"><sc-if value="{{podeVoltar}}" hint-placeholder-val="{{false}}"><button class="help" onClick="{{prev}}" style="min-height: 44px; display: inline-flex; align-items: center; gap: 2px; padding: 0 6px 0 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>Passo anterior</button></sc-if><span class="small" style="margin-left: auto; font-size: 12.5px; font-weight: 700; color: #55626F; white-space: nowrap">{{stn}} de 5</span><button class="help" onClick="{{toggleHelp}}" aria-expanded="{{helpStr}}" style="min-height: 44px; margin-left: 6px">Dicas</button></div><div class="prog" aria-hidden="true"><i class="{{p0}}"></i><i class="{{p1}}"></i><i class="{{p2}}"></i><i class="{{p3}}"></i><i class="{{p4}}"></i></div></div></sc-if>
-<sc-if value="{{help}}" hint-placeholder-val="{{false}}"><div class="card soft small stack" style="gap: 6px"><span><b>Que dia é “hoje”.</b> O dia vai das 4h às 3h59. Registrou de madrugada, antes de dormir? Vale para o dia que está terminando.</span><span><b>Sono.</b> Vale o chute. Toque na hora em que apagou a luz e na hora em que levantou: o app faz a conta. Não lembra? Marque “Não lembro”.</span><span><b>Humor.</b> Pense na maior parte do dia. “Normal para mim” é como você costuma ser quando está bem.</span><span><b>Remédio.</b> “Como combinado” é do jeito que o profissional orientou.</span><span><b>Nota.</b> Fatos, não rótulos: o que aconteceu, quanto durou, o que veio antes.</span></div></sc-if>
+<sc-if value="{{help}}" hint-placeholder-val="{{false}}"><div class="card soft small stack" style="gap: 6px"><span><b>Que dia é “hoje”.</b> O dia vai das 4h às 3h59. Registrou de madrugada, antes de dormir? Vale para o dia que está terminando.</span><span><b>Sono.</b> Vale o chute. Toque na hora em que apagou a luz e na hora em que levantou: o app faz a conta. Não lembra? Marque “Não lembro”.</span><span><b>Humor.</b> Pense na maior parte do dia. “Normal para mim” é como você costuma ser quando está bem.</span><span><b>Remédio.</b> “Como combinado” é o que você tem hoje com o profissional: dose mudada por ele e tomada é como combinado. Faltou algum, mudou a dose por conta própria ou atrasou muito? “Diferente do combinado”.</span><span><b>Nota.</b> Fatos, não rótulos: o que aconteceu, quanto durou, o que veio antes.</span></div></sc-if>
 
 <sc-if value="{{s0}}" hint-placeholder-val="{{true}}"><h2 class="q">Como você <span class="lt">esteve hoje?</span></h2>
 <p class="small muted" style="margin: 0">Já registrado (salvo sáb 17/10 às 23:12). Mude o que quiser e salve de novo.</p>
@@ -36,8 +36,9 @@
 </div></sc-if>
 
 <sc-if value="{{s2}}" hint-placeholder-val="{{false}}"><h2 class="q">E o <span class="lt">remédio?</span></h2>
+<p class="small muted" style="margin: 0">O combinado é o que você tem hoje com o profissional.</p>
 <div class="card stack" style="gap: 8px">
-<sc-for list="{{remedio}}" as="m" hint-placeholder-count="3"><button class="opt {{m.cls}}" onClick="{{m.pick}}" aria-pressed="{{m.on}}">{{m.label}}<span class="r"></span></button></sc-for>
+<sc-for list="{{remedio}}" as="m" hint-placeholder-count="4"><button class="opt {{m.cls}}" onClick="{{m.pick}}" aria-pressed="{{m.on}}"><span style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0">{{m.label}}<sc-if value="{{m.hasSub}}" hint-placeholder-val="{{false}}"><span class="small muted" style="font-weight: 500">{{m.sub}}</span></sc-if></span><span class="r"></span></button></sc-for>
 </div></sc-if>
 
 <sc-if value="{{s3}}" hint-placeholder-val="{{false}}"><h2 class="q">Aconteceu <span class="lt">algo hoje?</span></h2>
@@ -74,7 +75,7 @@
 <script src="runtime.js?v=202611152153"></script>
 <script>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { st: 5, nt: 'Esqueci o remédio; saí e voltei às 3h.', dei: '1h', lev: '6h', sono: '5 h ou menos', humor: 'Acelerado ou fora do controle', rem: 'Não tomei como combinado', m: [2], e: false, hp: false }; }
+  constructor(props) { super(props); this.state = { st: 5, nt: 'Esqueci o remédio; saí e voltei às 3h.', dei: '1h', lev: '6h', sono: '5 h ou menos', humor: 'Acelerado ou fora do controle', rem: 'Não tomei nenhum', m: [2], e: false, hp: false }; }
   renderVals() {
     const s = this.state;
     const set = (o) => this.setState(Object.assign({ e: false }, o));
@@ -90,8 +91,9 @@ class Component extends DCLogic {
     const sono = FAIXAS.map((l) => { const on = s.sono === l; return { label: l, cls: on ? 'on' : '', on: on ? 'true' : 'false', pick: () => set({ sono: on ? null : l, dei: null, lev: null }) }; });
     const H = [["Acelerado ou fora do controle", "e1"], ["Animado", "e3"], ["Normal para mim", "e4"], ["Pra baixo", "e5"], ["Muito para baixo, tudo custa", "e7"]];
     const humor = H.map((h) => { const on = s.humor === h[0]; return { label: h[0], color: h[1], cls: on ? 'on' : '', on: on ? 'true' : 'false', pick: () => set({ humor: on ? null : h[0] }) }; });
-    const R = ["Tomei como combinado", "Não tomei como combinado", "Não uso remédio"];
-    const remedio = R.map((l) => { const on = s.rem === l; return { label: l, cls: on ? 'on' : '', on: on ? 'true' : 'false', pick: () => set({ rem: on ? null : l }) }; });
+    const R = ["Tomei como combinado", "Tomei diferente do combinado", "Não tomei nenhum", "Não uso remédio"];
+    const SUB = { "Tomei diferente do combinado": "faltou algum, outra dose ou outro horário" };
+    const remedio = R.map((l) => { const on = s.rem === l; return { label: l, sub: SUB[l] || '', hasSub: !!SUB[l], cls: on ? 'on' : '', on: on ? 'true' : 'false', pick: () => set({ rem: on ? null : l }) }; });
     const M = ["Humor mudou muito no dia", "Irritação forte ou explosão", "Agi por impulso", "Perdi o foco ou esqueci algo", "Ansiedade ou pânico", "Evitei pessoas ou saídas", "Álcool ou substâncias além do normal", "Pensamentos de morte ou de me machucar", "Nada disso hoje"];
     const marcas = M.map((l, i) => { const on = s.m.includes(i); return { label: l, cls: (on ? 'on ' : '') + (i > 5 ? 'w' : ''), on: on ? 'true' : 'false', pick: () => set({ m: on ? s.m.filter((x) => x !== i) : (i === 8 ? [8] : s.m.filter((x) => x !== 8).concat([i])) }) }; });
     const ok = !!(s.sono || s.humor || s.rem || s.m.length);
